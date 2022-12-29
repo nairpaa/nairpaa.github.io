@@ -48,7 +48,7 @@ PS > $ExecutionContext.SessionState.LanguageMode
 FullLanguage
 ```
 
-![PowerShell Downgrade](https://2603957456-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LFEMnER3fywgFHoroYn%2F-LM9ifDRPS0RB9NvTGd5%2F-LM9juaZ8VJkPyFsl1AJ%2Fps-downgrade.png?alt=media&token=1f05b4cc-03a8-43d2-8118-5a4163e877df)
+![PowerShell Downgrade](/assets/img/posts/clm-bypass/3.png)
 
 ### Cara 2: PSByPassCLM
 
