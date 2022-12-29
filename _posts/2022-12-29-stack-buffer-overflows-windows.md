@@ -68,7 +68,7 @@ Untuk membuka program dengan `x32dbg`, kita dapat memilih `File>Open` atau tekan
 
 ### 2.3. Getting Help
 
-Jika kita membutuhkan informasi lebih tentang aplikasi *debugger* ini, kita dapat merujuk ke [dokumentasi x64dbg](https://help.x64dbg.com/en/latest/) dan [dokumentasi ERC](https://andy53.github .io/ERC.net/api/index.html).
+Jika kita membutuhkan informasi lebih tentang aplikasi *debugger* ini, kita dapat merujuk ke [dokumentasi x64dbg](https://help.x64dbg.com/en/latest/) dan [dokumentasi ERC](https://andy53.github.io/ERC.net/api/index.html).
 
 Sekarang setelah semua alat sudah siap, kita dapat mulai men-*debug* program pertama kita untuk mencoba menemukan kerentanan stack buffer overflow dan mengeksploitasinya.
 
