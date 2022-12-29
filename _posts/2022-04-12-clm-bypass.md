@@ -3,9 +3,7 @@ title: 'Powershell Constrained Language Mode Bypass'
 date: 2022-04-12 08:15:22 +0700
 categories: [Windows, Bypass]
 tags: [windows, bypass, clm]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 PowerShell memiliki beberapa opsi *language*. *Language mode* ini memungkinkan user untuk beralih ke di antara sintak yang diizinkan dan tidak. Berikut adalah beberapa mode yang ada:

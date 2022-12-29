@@ -3,9 +3,7 @@ title: Part 1 - Domain Enumeration with PowerView
 date: 2022-02-19 11:50:22 +0700
 categories: [Active Directory, Post Compromise Enumeration]
 tags: [active directory, windows, powerview, enumeration]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 ### Tujuan 

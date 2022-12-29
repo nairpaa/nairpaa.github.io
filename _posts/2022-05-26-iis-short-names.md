@@ -3,9 +3,7 @@ title: IIS Short Names
 date: 2022-05-26 17:00:22 +0700
 categories: [Web Pentest, IIS]
 tags: [web, iis, fuzz]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 [**8.3 filename**](https://en.wikipedia.org/wiki/8.3_filename) (dikenal juga sebagai **short filename**) adalah konvensi nama file yang digunakan oleh DOS dan Microsoft Windows versi lama (sebelum Windows 95 dan Windows NT 3.5). 

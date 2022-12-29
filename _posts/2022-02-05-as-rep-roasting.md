@@ -3,9 +3,7 @@ title: Part 3 - AS-REP Roasting
 date: 2022-02-05 08:39:22 +0800
 categories: [Active Directory, Initial Attack Vector]
 tags: [active directory, windows, rubeus, impacket, hashcat, enumeration, exploit]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 ### Tujuan 

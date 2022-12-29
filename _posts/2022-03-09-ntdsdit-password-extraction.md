@@ -3,9 +3,7 @@ title: Ntds.dit Password Extraction
 date: 2022-03-09 23:35:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, ntds.dit, persistence, vssadmin, mimikatz, powersploit, dsinternals]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 Semua data Active Directory disimpan di dalam file **ntds.dit** (secara default terletak di **C:\Windows\NTDS\\**) pada setiap Domain Controller. Di antara jenis informasi lainnya, file **.dit** tersebut berisi akun user beserta hash-nya. 

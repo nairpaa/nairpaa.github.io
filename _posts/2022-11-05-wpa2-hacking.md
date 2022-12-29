@@ -3,9 +3,7 @@ title: 'WPA2-PSK Hacking'
 date: 2022-11-05 11:30:22 +0700
 categories: ['Another Hacking', 'Wifi Pentest']
 tags: [wifi, wpa2-psk, dongle]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 Tujuan dari kegiatan pentest ini adalah mendapatkan password dari wifi dengan keamanan WPA2-PSK.

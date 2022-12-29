@@ -3,9 +3,7 @@ title: Golden Ticket
 date: 2022-03-09 23:11:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, golden ticket, impacket, mimikatz]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 **Golden Ticket** bekerja dengan cara memalsukan Kerberos ticket dengan mengkompromisasi akun **krbtgt** yang merupakan akun dari layanan Kerberos, yang bertanggung jawab untuk men-generate dan memvalidasi Kerberos ticket di Active Directory.

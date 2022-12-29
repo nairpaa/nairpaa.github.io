@@ -3,9 +3,7 @@ title: '[ACL] ForceChangePassword Abuse'
 date: 2022-04-8 08:25:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, writeowner, privilege escalation, lateral movement, powerview]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 User yang memiliki hak akses `ForceChangePassword` memiliki kemampuan untuk mengubah kata sandi object (user) terkait tanpa harus mengetahui password yang digunakan saat ini.

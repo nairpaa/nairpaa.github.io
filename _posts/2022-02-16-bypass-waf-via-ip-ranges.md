@@ -3,9 +3,7 @@ title: Find The Origin IP Behind WAF via IP Ranges/CIDRs
 date: 2022-02-16 17:20:00 +0800
 categories: [Web Pentest, Bypass WAF]
 tags: [web, waf]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 Salah satu cara untuk mem-*bypass* WAF adalah dengan cara mengakses aplikasi web target melalui IP aslinya. 

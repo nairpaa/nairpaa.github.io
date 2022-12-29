@@ -3,9 +3,7 @@ title: Plaintext Password Extraction through Group Policy Preferences (GPP)
 date: 2022-03-06 11:50:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, gpp-attack]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 **Group Policy Preferences** memungkinkan administrator untuk membuat kebijakan menggunakan *embedded* kredensial. Kredensial ini dienkripsi dan disimpan di *cPassword*. 

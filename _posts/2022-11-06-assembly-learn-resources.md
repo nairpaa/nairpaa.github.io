@@ -3,9 +3,7 @@ title: 'Assembly Learn Resources'
 date: 2022-11-06 09:38:22 +0700
 categories: ['Binary Exploitation', 'Assembly']
 tags: [assembly, learn-resources]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 *Resources* untuk belajar dasar Assembly:

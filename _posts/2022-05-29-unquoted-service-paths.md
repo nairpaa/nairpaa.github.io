@@ -3,9 +3,7 @@ title: 'Unquoted Service Paths'
 date: 2022-05-29 14:15:22 +0700
 categories: [Windows, Privilege Escalations]
 tags: [windows, privilege escalation]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 **Unquoted Service Paths** adalah ketika PATH binary dari suatu layanan mengandung spasi dengan tidak menggunakan kutip. 

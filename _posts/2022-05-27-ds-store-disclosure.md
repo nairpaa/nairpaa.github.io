@@ -3,9 +3,7 @@ title: '.DS_Store File Disclosure'
 date: 2022-05-28 05:00:22 +0700
 categories: [Web Pentest, Another]
 tags: [web, pentest]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 File [`.DS_Store` (Desktop Services Store)](http://en.wikipedia.org/wiki/.DS_Store) adalah file yang dibuat Mac OS X untuk pengaturan foldernya sama seperti file `desktop.ini` pada Windows.

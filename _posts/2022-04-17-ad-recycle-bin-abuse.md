@@ -3,9 +3,7 @@ title: 'AD Recycle Abuse'
 date: 2022-04-17 22:40:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, ad recycle abuse, privilege escalation, lateral movement]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 `AD Recycle Bin` adalah grup di Windows yang cukup terkenal. [Active Directory Object Recovery (Recycle Bin)](https://blog.stealthbits.com/active-directory-object-recovery-recycle-bin/) adalah fitur yang ditambahkan di Windows Server 2008 yang memungkinkan administrator untuk memulihkan *item* yang dihapus (seperti *recycle bin* untuk file). 

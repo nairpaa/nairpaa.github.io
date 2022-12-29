@@ -3,9 +3,7 @@ title: Keberoasting
 date: 2022-03-09 23:20:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, keberoasting, impacket, mimikatz, rubeus, kerberoast]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 ## Apa itu SPN?

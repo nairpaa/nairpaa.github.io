@@ -3,9 +3,7 @@ title: Part 7 - Another Attack Vectors
 date: 2022-02-05 10:32:22 +0800
 categories: [Active Directory, Initial Attack Vector]
 tags: [active directory, windows]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 # Another Attack Vectors

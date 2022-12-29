@@ -3,9 +3,7 @@ title: '[Kerberos] AllowToDelegate Abuse (Constrained Delegation)'
 date: 2022-05-05 11:10:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, readgmsapassword Abuse, privilege escalation, lateral movement]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 **Constrained delegation** memungkinkan prinsipal untuk mengautentikasi sebagai pengguna mana pun ke layanan tertentu di komputer target.

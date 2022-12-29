@@ -3,9 +3,7 @@ title: '[ACL] ReadGMSAPassword Abuse'
 date: 2022-05-05 10:10:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, readgmsapassword Abuse, privilege escalation, lateral movement]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 [**Group Manage Service Accounts**](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/service-accounts-group-managed) (GMSA) memberikan tambahan keamanan untuk *service accounts*.

@@ -3,9 +3,7 @@ title: Part 2 - User Enumeration
 date: 2022-02-05 08:35:22 +0800
 categories: [Active Directory, Initial Attack Vector]
 tags: [active directory, windows, kerbrute, impacket, enumeration]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 ### Tujuan 

@@ -3,9 +3,7 @@ title: AdminSDHolder Modification
 date: 2022-03-09 23:26:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, adminsdholder, persistence]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 **AdminSDHolder Modification** adalah teknik persitensi di mana penyerang menyalahgunakan proses **SDProp** di Active Directory untuk membuat *backdoor* persisten ke Active Directory. 

@@ -3,9 +3,7 @@ title: Part 2 - Domain Enumeration with AD Module
 date: 2022-02-19 12:00:22 +0700
 categories: [Active Directory, Post Compromise Enumeration]
 tags: [active directory, windows, admodule, enumeration]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 ### Tujuan 

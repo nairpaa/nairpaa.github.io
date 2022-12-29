@@ -3,9 +3,7 @@ title: 'SCF File Attack'
 date: 2022-04-10 16:00:22 +0700
 categories: [Windows, Pentest]
 tags: [windows, phishing, scf, responder, poisoning, hashcat, initial access]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 Bukan hal baru bahwa file **SCF (*Shell Command Files*)** dapat digunakan untuk melakukan serangakaian perintah Windows Explorer yang sangat terbatas. 

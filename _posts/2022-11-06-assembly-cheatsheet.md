@@ -3,9 +3,7 @@ title: 'Assembly Cheatsheet'
 date: 2022-11-06 09:34:22 +0700
 categories: ['Binary Exploitation', 'Assembly']
 tags: [assembly, debug, reverse-engineering, binexp-linux, cheatsheet]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 ## Registers

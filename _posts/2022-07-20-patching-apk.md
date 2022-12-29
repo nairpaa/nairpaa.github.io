@@ -3,9 +3,7 @@ title: 'Decompile & Patching APK'
 date: 2022-07-20 10:10:22 +0700
 categories: ['Android Pentest', 'Reverse Engineering']
 tags: [android, integrity check, reverse engineering]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 *Decompile* adalah proses menggembalikan *source code* dari kode yang sudah di-*compile*. Setelah mendapatkan *source code*, kita dapat melakukan perubahan pada APK dan melakukan *recompile*, ini lah yang dinamakan *patching* APK.

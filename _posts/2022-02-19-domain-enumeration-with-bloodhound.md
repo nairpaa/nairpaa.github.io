@@ -3,9 +3,7 @@ title: Part 3 - Domain Enumeration with Bloodhound
 date: 2022-02-19 12:04:22 +0700
 categories: [Active Directory, Post Compromise Enumeration]
 tags: [active directory, windows, bloodhound, enumeration]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 ### Tujuan 

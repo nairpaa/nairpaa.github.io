@@ -3,9 +3,7 @@ title: From DnsAdmins to SYSTEM to Domain Compromise
 date: 2022-03-30 23:30:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, dnsadmins, privilege escalation]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 Menjadi member grup **DnsAdmins** memungkinkan kita untuk menggunakan perintah `dnscmd.exe` untuk menentukan plugin DDL yang harus diproses oleh layanan DNS.

@@ -3,9 +3,7 @@ title: '[Privilege Abuse] SeImpersonatePrivilege or SeAssignPrimaryToken (Potato
 date: 2022-05-29 09:00:22 +0700
 categories: [Windows, Privilege Escalations]
 tags: [windows, privilege escalation, potato]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 Hak akses `SeImpersonatePrivilege` (*Impersonate* klien setelah otentikasi) diperkenalkan di Windows 2000 SP4.

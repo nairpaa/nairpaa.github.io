@@ -3,9 +3,7 @@ title: Password Spraying
 date: 2022-03-06 15:48:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, password spraying, crackmapexec, kerbrute]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 **Password spraying** adalah serangan yang hampir mirip dengan *brute-force*, hanya saja ini dilakukan dengan 1 password dan banyak username. Biasanya dilakukan untuk mengecek penggunaan default password pada user lain. 

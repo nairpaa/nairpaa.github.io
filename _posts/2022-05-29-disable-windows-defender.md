@@ -3,9 +3,7 @@ title: 'Disable Windows Defender'
 date: 2022-05-28 07:50:22 +0700
 categories: [Windows, Bypass]
 tags: [windows, bypass, antivirus]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 ```powershell

@@ -3,9 +3,7 @@ title: Pass-Attack
 date: 2022-03-06 11:50:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, pass-attack, mimikatz, impacket, crackmapexec]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 Pass-Attack dapat dilakukan ketika penyerang mendapatkan kredensial korban baik menggunakan user-password atau user-SAM hash. Serangan ini biasanya digunakan untuk melakukan *lateral movement*.

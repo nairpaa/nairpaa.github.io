@@ -3,9 +3,7 @@ title: '[Privilege Abuse] SeBackupPrivilege'
 date: 2022-03-12 23:30:22 +0700
 categories: [Windows, Privilege Escalations]
 tags: [windows, persistence, privilege escalation, mimikatz]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 # SeBackupPrivilege

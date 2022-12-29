@@ -3,9 +3,7 @@ title: Part 4 - Another Tools for AD Enumeration
 date: 2022-02-19 12:35:22 +0700
 categories: [Active Directory, Post Compromise Enumeration]
 tags: [active directory, windows, adrecon, aclight, adidnsdump, ldapdomaindump, enumeration]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 Terdapat tools lain untuk melakukan enumerasi Active Directory, seperti:

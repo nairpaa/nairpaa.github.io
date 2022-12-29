@@ -3,9 +3,7 @@ title: DCSync Attack
 date: 2022-03-09 00:20:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, dcsync attack]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 **DCSync** adalah teknik *dumping* kredensial yang dapat mengarah pada kompromisasi kredensial pengguna, dan lebih serius sebagai pendahuluan untuk pembuatan **Golden Ticket**, karena **DCSync** dapat digunakan untuk mengkompromisasikan kata sandi akun **krbtgt**.

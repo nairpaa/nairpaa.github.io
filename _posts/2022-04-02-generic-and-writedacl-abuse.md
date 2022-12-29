@@ -3,9 +3,7 @@ title: '[ACL] GenericAll, GenericWrite and Dacl Abuse'
 date: 2022-04-2 16:35:22 +0700
 categories: [Active Directory, Post Compromise Attack]
 tags: [active directory, windows, genericwrite, privilege escalation, lateral movement, powerview]     # TAG names should always be lowercase
-author:
-  name: Nairpaa
-  link: https://nairpaa.github.io
+author: nairpaa
 ---
 
 Berikut adalah penjelasan-penjelasan dari setiap hak akses yang akan kita bahas:
