@@ -58,7 +58,7 @@ Setiap kali kita ingin men-*debug* sebuah program, kita dapat menjalankannya mel
 
 Untuk membuka program dengan `x32dbg`, kita dapat memilih `File>Open` atau tekan `F3`, yang akan meminta kita untuk memilih program yang akan di-*debug*.
 
-> Pada kesempatan latihan kali ini kita akan men-*debug* aplikasi [**Free CD to MP3 Converter 3.1**]((https://www.exploit-db.com/exploits/15480)) yang rentan terhadap buffer overflows.
+> Pada kesempatan latihan kali ini kita akan men-*debug* aplikasi [**Free CD to MP3 Converter 3.1**](https://www.exploit-db.com/exploits/15480) yang rentan terhadap buffer overflows.
 {: .prompt-info }
 
 ![Attach Program Pada x64dbg](/assets/img/posts/stack-buffer-overflows-windows/2.png)
