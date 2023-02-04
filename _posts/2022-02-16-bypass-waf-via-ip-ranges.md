@@ -1,8 +1,8 @@
 ---
 title: Find The Origin IP Behind WAF via IP Ranges/CIDRs
 date: 2022-02-16 17:20:00 +0800
-categories: [Web Pentest, Bypass WAF]
-tags: [web, waf]     # TAG names should always be lowercase
+categories: [Another Hacking, OSINT]
+tags: [web, waf, osint]     # TAG names should always be lowercase
 author: nairpaa
 ---
 

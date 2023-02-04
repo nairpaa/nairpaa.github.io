@@ -1,7 +1,7 @@
 ---
 title: 'How to Pick a Tubular Lock'
 date: 2022-07-19 10:30:22 +0700
-categories: ['ATM Pentest', 'Lock Pick']
+categories: ['Another Hacking', 'Lock Pick']
 tags: [atm, lockpick, redteam]     # TAG names should always be lowercase
 author: nairpaa
 ---
