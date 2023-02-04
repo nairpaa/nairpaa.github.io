@@ -1,7 +1,7 @@
 ---
 title: 'Unquoted Service Paths'
 date: 2022-05-29 14:15:22 +0700
-categories: [Windows, Privilege Escalations]
+categories: [Privilege Escalation, Windows Privilege Escalation]
 tags: [windows, privilege escalation]     # TAG names should always be lowercase
 author: nairpaa
 ---

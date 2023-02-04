@@ -1,7 +1,7 @@
 ---
 title: '[Privilege Abuse] SeImpersonatePrivilege or SeAssignPrimaryToken (Potatoes)'
 date: 2022-05-29 09:00:22 +0700
-categories: [Windows, Privilege Escalations]
+categories: [Privilege Escalation, Windows Privilege Escalation]
 tags: [windows, privilege escalation, potato]     # TAG names should always be lowercase
 author: nairpaa
 ---
