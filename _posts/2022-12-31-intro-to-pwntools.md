@@ -1,7 +1,7 @@
 ---
 title: 'Intro to Pwntools'
 date: 2022-12-31 03:40:22 +0700
-categories: ['Binary Exploitation', 'Linux']
+categories: ['Binary Exploitation', 'Linux-Exploit']
 tags: [assembly, buffer overflows, stack-buffer overflows, x86, binexp-linux, pwntools]     # TAG names should always be lowercase
 author: nairpaa
 ---

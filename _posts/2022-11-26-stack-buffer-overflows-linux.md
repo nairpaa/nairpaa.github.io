@@ -1,7 +1,7 @@
 ---
 title: 'Stack-based Buffer Overflows on Linux x86'
 date: 2022-11-26 09:44:22 +0700
-categories: ['Binary Exploitation', 'Linux']
+categories: ['Binary Exploitation', 'Linux-Exploit']
 tags: [assembly, buffer overflows, stack-buffer overflows, x86, binexp-linux]     # TAG names should always be lowercase
 author: nairpaa
 ---

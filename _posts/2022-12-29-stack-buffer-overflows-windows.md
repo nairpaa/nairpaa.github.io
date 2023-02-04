@@ -1,7 +1,7 @@
 ---
 title: 'Stack-based Buffer Overflows on Windows x86'
 date: 2022-12-29 14:05:22 +0700
-categories: ['Binary Exploitation', 'Windows']
+categories: ['Binary Exploitation', 'Win-Exploit']
 tags: [assembly, buffer overflows, stack-buffer overflows, x86, binexp-win, x64dbg]     # TAG names should always be lowercase
 author: nairpaa
 ---
