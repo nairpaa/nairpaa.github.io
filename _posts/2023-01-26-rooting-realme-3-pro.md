@@ -1,7 +1,7 @@
 ---
 title: 'Rooting Device Realme 3 Pro'
 date: 2023-01-26 15:48:22 +0700
-categories: ['Android Pentest', 'Rooting']
+categories: ['Android Hacking', 'Rooting']
 tags: [rooting, realme 3 pro, magisk, twrp]     # TAG names should always be lowercase
 author: nairpaa
 ---

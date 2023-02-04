@@ -1,7 +1,7 @@
 ---
 title: 'Decompile & Patching APK'
 date: 2022-07-20 10:10:22 +0700
-categories: ['Android Pentest', 'Reverse Engineering']
+categories: ['Android Hacking', 'Reverse Engineering']
 tags: [android, integrity check, reverse engineering]     # TAG names should always be lowercase
 author: nairpaa
 ---
