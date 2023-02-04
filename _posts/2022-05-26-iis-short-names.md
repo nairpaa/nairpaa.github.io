@@ -1,7 +1,7 @@
 ---
 title: IIS Short Names
 date: 2022-05-26 17:00:22 +0700
-categories: [Web Pentest, IIS]
+categories: [Web Hacking, Web App Testing]
 tags: [web, iis, fuzz]     # TAG names should always be lowercase
 author: nairpaa
 ---

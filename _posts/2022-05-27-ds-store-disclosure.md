@@ -1,7 +1,7 @@
 ---
 title: '.DS_Store File Disclosure'
 date: 2022-05-28 05:00:22 +0700
-categories: [Web Pentest, Another]
+categories: [Web Hacking, Web App Testing]
 tags: [web, pentest]     # TAG names should always be lowercase
 author: nairpaa
 ---
