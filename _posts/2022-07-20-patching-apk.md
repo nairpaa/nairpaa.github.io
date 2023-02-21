@@ -12,9 +12,9 @@ Kegiatan *patching* APK ini biasanya digunakan untuk mem-*bypass* root dan SSL P
 
 ## 1. Scenario
 
-Pada aplikasi `diva-beta.apk` terdapat soal **Harcoding Issues - Part 1** yang dimana kita perlu menginputkan *vendor key* yang valid.
+Pada aplikasi `diva-beta.apk` terdapat soal **Harcoding Issues - Part 1** yang mana kita perlu menginputkan *vendor key* yang valid.
 
-*Vendor key* yang valid adalah "*vendorsecretkey*", hal ini bisa diketahui karena *key* tersebut disimpan di *source code*-nya.
+*Vendor key* yang valid pada soal ini adalah "**vendorsecretkey**", hal ini bisa diketahui karena *key* tersebut disimpan di *source code*-nya.
 
 Ketika kita menginputkan *key* yang salah, akan muncul pesan:
 
@@ -26,7 +26,7 @@ Ketika kita menginputkan *key* yang salah, akan muncul pesan:
 Ketika kita menginputkan *key* yang valid, akan muncul pesan:
 
 > Access granted! See you on the other side :)
-{: .prompt-note }
+{: .prompt-tip }
 
 ![DIVA: Jika input vendor key yang valid](/assets/img/posts/patching-apk/5-2.png)
 
@@ -36,10 +36,9 @@ Pada kesempatan kali ini, kita akan mempelajari tentang *patching* atau modifika
 
   
 1. Device atau emulator Android
-  - Jika Anda tidak memiliki akses root, Anda bisa mengikuti tutorial [di sini](https://koz.io/using-frida-on-android-without-root/).
   - Salah satu emulator Android yang saya rekomendasikan adalah [Genymotion](https://www.genymotion.com/download/).
 2. Java
-  - [Java](https://www.java.com/en/download/help/windows_manual_download.html) adalah salah satu bahasa pemrogramman yang sering digunakan untuk membuat APK, dan beberapa tools yang akan kita gunakan menggunakan bahasa Java.
+  - [Java](https://www.java.com/en/download/help/windows_manual_download.html) adalah salah satu bahasa pemrogramman yang sering digunakan untuk membuat APK, dan beberapa tools yang akan kita gunakan juga menggunakan bahasa Java.
   - `❯ apt-get install default-jre && apt-get install default-jdk`
 3. APK Studio
   - [APKStudio](https://github.com/vaibhavpandeyvpz/apkstudio/releases) adalah IDE *open source* berbasis Qt yang digunakan untuk membantu proses *reverse engineering* aplikasi Android.
@@ -57,17 +56,17 @@ Pada kesempatan kali ini, kita akan mempelajari tentang *patching* atau modifika
 
 ## 3. Setting up APKStudio
 
-Jalankan APKStudio, pada menu *Settings* terdapat konfigurasi PATH dari masing-masing tools. Silahkan sesuaikan dengan kondisi anda.
+Jalankan APKStudio, pada menu **Settings** terdapat konfigurasi PATH dari masing-masing tools. Silahkan sesuaikan dengan kondisi Anda.
 
 ![Menyiapkan APKStuido](/assets/img/posts/patching-apk/1.png)
 
 Keretangan:
 
-- [AAPT2](https://developer.android.com/studio/command-line/aapt2?hl=id) (*Android Asset Packaging Tool*) adalah alat build yang digunakan oleh Android Studio dan Plugin Android Gradle untuk mengompilasi dan memaketkan resource aplikasi.
+- [AAPT2](https://developer.android.com/studio/command-line/aapt2?hl=id) (*Android Asset Packaging Tool*) adalah alat yang digunakan oleh Android Studio dan Plugin Android Gradle untuk mengompilasi dan memaketkan *resource* aplikasi.
 
 ## 4. Decompile APK
 
-Untuk melakukan *decompile* APK, tekan tombol *Open APK* dan pilih `diva-beta.apk` yang akan kita gunakan sebagai bahan praktik.
+Untuk melakukan *decompile* APK, tekan tombol **Open APK** dan pilih `diva-beta.apk` yang akan kita gunakan sebagai bahan praktik.
 
 ![Decompile APK](/assets/img/posts/patching-apk/2.png)
 
@@ -85,7 +84,7 @@ Hasil dari *decompile*-nya akan terlihat seperti berikut:
 
 ![Hasil Decompile](/assets/img/posts/patching-apk/4-1.png)
 
-Jika anda ingin *decompile* APK secara manual gunakan perintah berikut:
+Jika Anda ingin *decompile* APK secara manual gunakan perintah berikut:
 
 ```bash
 # decompile .apk
@@ -105,19 +104,17 @@ Sebagai contoh pada aplikasi `diva-beta.apk` terdapat *class* `HardcodeActivity`
 
 ![HardcodeActivity.smali](/assets/img/posts/patching-apk/4-2.png)
 
-Untuk lebih memahami, sebaiknya kita lihat melihat isi file `.java`.
+Untuk lebih memahami kode tersebut, sebaiknya kita lihat isi file `.java`.
 
 ![HardcodeActivity.java](/assets/img/posts/patching-apk/4-3.png)
 
 Terlihat pada gambar di atas, terdapat pemeriksaan string yang diinputkan. String atau *key* yang valid adalah ***vendorsecretkey***.
 
-----
-
-Untuk memahami lebih lanjut tentang `.smali` dan *reverse engineering* APK Android, anda bisa membaca artikel berikut:
-
+> Untuk memahami lebih lanjut tentang `.smali` dan *reverse engineering* APK Android, Anda bisa membaca artikel berikut:
 - [Editing Smali](https://yohan.es/security/android/editing-smali/)
 - [What's the best way to learn Smali?](https://stackoverflow.com/questions/5656804/whats-the-best-way-to-learn-smali-and-how-when-to-use-dalvik-vm-opcodes)
 - [Reverse Engineering APK Android](https://yohan.es/security/android/)
+{: .prompt-tip }
 
 ## 5. Patching APK
 
@@ -131,7 +128,7 @@ Jangan lupa untuk menyimpan perubahan (`CTRL`+`S`) dan *recompile*, seperti beri
 
 ![Recompile APK](/assets/img/posts/patching-apk/7.png) 
 
-Jika anda ingin *recompile* APK secara manual gunakan perintah berikut:
+Jika Anda ingin *recompile* APK secara manual gunakan perintah berikut:
 
 ```bash
 java -Xmx256m -jar apktool_2.5.0.jar b /apk/diva-beta.apk-decompiled --use-aapt2
@@ -197,7 +194,7 @@ Selanjutnya, pada APKStudio pilih menu *Project > Sign / Export* untuk menambahk
 
 ![Menambahkan Sertifikat pada APK](/assets/img/posts/patching-apk/10.png) 
 
-Jika anda ingin *signing* APK secara manual gunakan perintah berikut:
+Jika Anda ingin *signing* APK secara manual gunakan perintah berikut:
 
 ```bash
 java -Xmx256m -jar uber-apk-signer-1.2.1.jar -a /apk/diva-beta.apk-decompiled/dist/diva-beta.apk --allowResign --overwrite --ks <namacert>.key --ksPass <password> --ksAlias <namacert> --ksKeyPass <password>
@@ -223,11 +220,11 @@ Terlihat pada gambar di bawah ini, ketika kita mencoba menggunakan *key* lama, a
 Dan jika kita menginputkan ***BelajarPatchingAPK1337***, akan muncul pesan:
 
 > Access granted! See you on the other side :)
-{: .prompt-note }
+{: .prompt-tip }
 
 ![DIVA-Patching: Menggunakan key baru](/assets/img/posts/patching-apk/11-2.png)
 
-## 8. Closing
+---
 
 Kita telah berhasil melakukan *decompile* dan *patching* APK. Semoga artikel ini bermanfaat untuk teman-teman.
 
