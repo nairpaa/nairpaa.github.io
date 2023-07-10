@@ -2,7 +2,7 @@
 title: '0x1 - Introduction to Red Teaming'
 date: 2023-07-08 14:15:22 +0700
 categories: ['Red Team', 'Fundamental']
-tags: [Red Team, Introduction]     # TAG names should always be lowercase
+tags: [red team, introduction, fundamental]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
@@ -16,7 +16,7 @@ Catatan ini berisi tentang teori dasar *red teaming*, cara merencanakan serangan
 2. [What is Red Teaming?](/posts/what-is-red-teaming/)
 3. [Engagement Planning](/posts/red-team-enggagement/)
 4. [Reporting](/posts/reporting/)
-5. Introduction to C2
+5. [Introduction to C2](/posts/intro-to-c2/)
 
 ## 0x2 - References
 

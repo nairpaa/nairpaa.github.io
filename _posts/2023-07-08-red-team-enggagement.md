@@ -2,7 +2,7 @@
 title: '0x3 - Red Team Engagement Planning'
 date: 2023-07-08 15:50:22 +0700
 categories: ['Red Team', 'Fundamental']
-tags: [Red Team, Introduction]     # TAG names should always be lowercase
+tags: [red team, enggagement]     # TAG names should always be lowercase
 author: nairpaa
 ---
 

@@ -2,7 +2,7 @@
 title: '0x4 - Reporting'
 date: 2023-07-08 16:56:22 +0700
 categories: ['Red Team', 'Fundamental']
-tags: [Red Team, Introduction]     # TAG names should always be lowercase
+tags: [red team, report]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
