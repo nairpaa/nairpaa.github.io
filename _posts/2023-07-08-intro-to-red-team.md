@@ -2,7 +2,7 @@
 title: '0x1 - Introduction to Red Teaming'
 date: 2023-07-08 14:15:22 +0700
 categories: ['Red Team', 'Fundamental']
-tags: [red team, introduction, fundamental]     # TAG names should always be lowercase
+tags: [red team, introduction, fundamental, intro]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
