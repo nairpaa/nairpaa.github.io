@@ -165,7 +165,7 @@ Berikut adalah beberapa artikel dan *tools* yang bisa kita gunakan untuk membuat
 - [Phonebook.cz](https://phonebook.cz/)
 - [VoilaNorbert](https://www.voilanorbert.com/)
 - [Email Hippo](https://tools.verifyemailaddress.io/)
-- [https://email-checker.net/validate](Email Checker)
+- [Email Checker](https://email-checker.net/validate)
 - [Clearbit Connect](https://chrome.google.com/webstore/detail/clearbit-connect-supercha/pmnhcgfcafcnkbengdcanjablaabjplo?hl=en)
 
 ## 0x8 - Password OSINT
