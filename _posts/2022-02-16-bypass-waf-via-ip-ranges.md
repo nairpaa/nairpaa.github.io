@@ -1,8 +1,8 @@
 ---
-title: Find The Origin IP Behind WAF via IP Ranges/CIDRs
+title: '0x3 - Find The Origin IP Behind WAF via IP Ranges/CIDRs'
 date: 2022-02-16 17:20:00 +0800
-categories: [Another Hacking, OSINT]
-tags: [web, waf, osint]     # TAG names should always be lowercase
+categories: ['Red Team', 'External Reconnaissance']
+tags: [web, bypass waf, osint, network]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
@@ -10,15 +10,15 @@ Salah satu cara untuk mem-*bypass* WAF adalah dengan cara mengakses aplikasi web
 
 Umumnya perusahaan membeli banyak IP sekaligus (per-*subnet*) untuk digunakan oleh layanan-layanannya. Dan biasanya tidak semua layanan menggunakan WAF (contoh: server *development*). 
 
-Untuk mencari *range* IP milik target, hal pertama yang akan kita lakukan adalah mencari sub-domain target. Setelah itu, kita kumpulkan IP yang digunakan oleh sub-domain target. Hal ini bisa dilakukan dengan mudah dilakukan menggunakan tool seperti [aquatune](https://github.com/michenriksen/aquatone).
+Untuk mencari *range* IP milik target, hal pertama yang bisa kita lakukan adalah mencari sub-domain target. Setelah itu, kita kumpulkan IP yang digunakan oleh sub-domain target. Hal ini bisa dilakukan dengan mudah dilakukan menggunakan *tool* seperti [aquatune](/posts/osint-tools/#0x3---dns-records).
 
-Selanjutnya, dengan menggunakan tool seperti nmap kita akan mencari port web pada *range* IP yang telah kita temukan sebelumnya. Setelah mendapatkan list IP target yang menjalankan layanan web, kita akan mengkases virtual host domain target melalui list IP tersebut.
+Selanjutnya, dengan menggunakan *tool* seperti nmap kita akan mencari port web pada *range* IP yang telah kita temukan sebelumnya. Setelah mendapatkan list IP target yang menjalankan layanan web, kita akan mengkases virtual host domain target melalui list IP tersebut.
 
 ## Tahap eksploitasi
 
 ### Step 1: Deteksi Jenis WAF
 
-Untuk mendeteksi apakah target menggunakan WAF dan jenis WAF yang digunakan, kita bisa menggunakan tool [wafw00f](https://github.com/EnableSecurity/wafw00f).
+Untuk mendeteksi apakah target menggunakan WAF dan jenis WAF yang digunakan, kita bisa menggunakan *tool* [wafw00f](https://github.com/EnableSecurity/wafw00f).
 
 ```bash
 ➜ wafw00f -l
