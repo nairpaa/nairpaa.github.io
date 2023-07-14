@@ -4,6 +4,7 @@ date: 2023-07-08 14:15:22 +0700
 categories: ['Red Team', 'Fundamental']
 tags: [red team, introduction, fundamental, intro]     # TAG names should always be lowercase
 author: nairpaa
+pin: true
 ---
 
 Tujuan saya membuat artikel ini adalah sebagai catatan pribadi ketika saya mempelajari konsep dasar dan *skillsets* yang dibutuhkan untuk berkarir di bidang **red teaming**. 
@@ -17,6 +18,7 @@ Catatan ini berisi tentang teori dasar *red teaming*, cara merencanakan serangan
 3. [Engagement Planning](/posts/red-team-enggagement/)
 4. [Reporting](/posts/reporting/)
 5. [Introduction to C2](/posts/intro-to-c2/)
+6. [Introduction to External Reconnaissance](/posts/intro-to-external-recon/)
 
 ## 0x2 - References
 
