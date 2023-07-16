@@ -15,7 +15,7 @@ Catatan ini berisi tentang teori dasar *red teaming*, cara merencanakan serangan
 
 1. [Introduction to Red Teaming](/posts/intro-to-red-team/)
 2. [What is Red Teaming?](/posts/what-is-red-teaming/)
-3. [Engagement Planning](/posts/red-team-enggagement/)
+3. [Engagement Planning](/posts/red-team-engagement/)
 4. [Reporting](/posts/reporting/)
 5. [Introduction to C2](/posts/intro-to-c2/)
 6. [Introduction to External Reconnaissance](/posts/intro-to-external-recon/)
