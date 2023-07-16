@@ -6,7 +6,7 @@ tags: [red team, what-is, fundamental, intro, osint]     # TAG names should alwa
 author: nairpaa
 ---
 
-Jika [Red Teaming Engagement](/posts/red-team-enggagement/) tidak dimulai melalui metodologi "*assume branch*" dan kita perlu mendapatkan *initial entry* ke dalam jaringan target, proses *external reconnaissance* akan diperlukan.
+Jika [Red Teaming Engagement](/posts/red-team-engagement/) tidak dimulai melalui metodologi "*assume branch*" dan kita perlu mendapatkan *initial entry* ke dalam jaringan target, proses *external reconnaissance* akan diperlukan.
 
 Ada dua aspek utama dalam *recon*, yaitu:
 1. **Organisational**
