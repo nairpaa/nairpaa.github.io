@@ -1,5 +1,5 @@
 ---
-title: '0x2 - Cobalt Strike'
+title: '02 - Cobalt Strike'
 date: 2023-07-10 19:15:22 +0700
 categories: ['Red Team', 'C2']
 tags: [red team, introduction, fundamental, c2, cobalt strike]     # TAG names should always be lowercase
