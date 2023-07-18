@@ -2,7 +2,7 @@
 title: '01 - Initial Access'
 date: 2023-07-15 14:55:22 +0700
 categories: ['Red Team', 'Initial Access']
-tags: [red team, introduction, what is, penetration testing, social engineering, physical penetration testing, initial access]     # TAG names should always be lowercase
+tags: [red team, introduction, what is, penetration testing, social engineering, physical penetration testing, initial access, delivery, exploitation]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
