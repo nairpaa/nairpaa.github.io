@@ -1,5 +1,5 @@
 ---
-title: '0x2 - What is Red Teaming?'
+title: '02 - What is Red Teaming?'
 date: 2023-07-08 14:00:22 +0700
 categories: ['Red Team', 'Fundamental']
 tags: [red team, fundamental, what is]     # TAG names should always be lowercase

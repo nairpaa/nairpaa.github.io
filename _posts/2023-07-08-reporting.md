@@ -1,5 +1,5 @@
 ---
-title: '0x4 - Reporting'
+title: '04 - Reporting'
 date: 2023-07-08 16:56:22 +0700
 categories: ['Red Team', 'Fundamental']
 tags: [red team, report]     # TAG names should always be lowercase

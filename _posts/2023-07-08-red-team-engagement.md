@@ -1,5 +1,5 @@
 ---
-title: '0x3 - Red Team Engagement Planning'
+title: '03 - Red Team Engagement Planning'
 date: 2023-07-08 15:50:22 +0700
 categories: ['Red Team', 'Fundamental']
 tags: [red team, engagement]     # TAG names should always be lowercase
