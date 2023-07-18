@@ -19,6 +19,7 @@ Catatan ini berisi tentang teori dasar *red teaming*, cara merencanakan serangan
 4. [Reporting](/posts/reporting/)
 5. [Introduction to C2](/posts/intro-to-c2/)
 6. [Introduction to External Reconnaissance](/posts/intro-to-external-recon/)
+7. [Initial Access](/posts/initial-access/)
 
 ## 0x2 - References
 
