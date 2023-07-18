@@ -36,7 +36,7 @@ Ketika melakukan *recon* aktif (digital), pertimbangkan untuk menggunakan layana
 
 Jadi, *External Reconnaissance* dapat memanfaatkan teknik OSINT dalam prosesnya. Sebagai contoh, seorang penyerang bisa menggunakan informasi yang ditemukan melalui pencarian Google (satu bentuk OSINT) untuk memahami lebih lanjut tentang target mereka. Namun, OSINT juga bisa digunakan dalam banyak konteks lainnya yang tidak berhubungan dengan External Reconnaissance.
 
-## 0x2 - Table of Content
+## 0x3 - Table of Content
 
 1. [Intro to External Reconnaissance](/posts/intro-to-external-recon/)
 2. [OSINT Tools](/posts/osint-tools/)
