@@ -1,5 +1,5 @@
 ---
-title: '0x2 - OSINT Tools'
+title: '02 - OSINT Tools'
 date: 2023-07-13 17:09:22 +0700
 categories: ['Red Team', 'External Reconnaissance']
 tags: [osint, collection tools]     # TAG names should always be lowercase

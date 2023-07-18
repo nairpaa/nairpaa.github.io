@@ -1,5 +1,5 @@
 ---
-title: '0x3 - Find The Origin IP Behind WAF via IP Ranges/CIDRs'
+title: '03 - Find The Origin IP Behind WAF via IP Ranges/CIDRs'
 date: 2022-02-16 17:20:00 +0800
 categories: ['Red Team', 'External Reconnaissance']
 tags: [web, bypass waf, osint, network]     # TAG names should always be lowercase

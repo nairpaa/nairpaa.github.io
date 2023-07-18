@@ -1,5 +1,5 @@
 ---
-title: '0x1 - Introduction to External Reconnaissance'
+title: '01 - Introduction to External Reconnaissance'
 date: 2023-07-11 21:06:22 +0700
 categories: ['Red Team', 'External Reconnaissance']
 tags: [red team, what-is, fundamental, intro, osint]     # TAG names should always be lowercase
