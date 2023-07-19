@@ -35,3 +35,4 @@ Berikut adalah jenis-jenis *Social Engineering*:
 
 1. [Introduction to Social Engineering](/posts/intro-to-social-engineering/)
 2. [[Phishing] Office365 Phishing Templates](/posts/office365-phishing-templates/)
+3. [[Phishing] HTML Smuggling](/posts/html-smuggling/)
