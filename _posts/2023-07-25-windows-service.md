@@ -69,7 +69,7 @@ Sebuah *service* memiliki beberapa properti yang bisa kita perhatikan, seperti:
 
 ### 0x1 - Binary Path
 
-Ini adalah *path* di mana file eksekusi (`.exe`) dari *service* tersebut berada. Windows *service* sering kali berada di `C:\Windows\system32` dan pihak ketiga di `C:\Program Files` atau `C:\Program Files (x86)`.
+Ini adalah PATH di mana file eksekusi (`.exe`) dari *service* tersebut berada. Windows *service* sering kali berada di `C:\Windows\system32` dan pihak ketiga di `C:\Program Files` atau `C:\Program Files (x86)`.
 
 ### 0x2 - Startup Type
 
