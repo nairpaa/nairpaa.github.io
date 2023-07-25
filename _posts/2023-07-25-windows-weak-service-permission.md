@@ -39,7 +39,7 @@ PS > Get-ModifiableServiceFile
 PS > .\winpeas.exe
 ```
 
-### Step 2: Create Malware and Upload to Service Path
+### Step 2: Create Malware and Upload
 
 ```bash
 # Contoh buat malware dengan MSF
