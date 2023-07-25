@@ -2,7 +2,7 @@
 title: '[Windows] User Sessions'
 date: 2023-07-25 17:06:22 +0700
 categories: ['Windows Hacking', 'Host Reconnaissance']
-tags: [red team, host reconnaissance, windows hacking, cobalt strike, clipboard]     # TAG names should always be lowercase
+tags: [red team, host reconnaissance, windows hacking, cobalt strike, session]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
