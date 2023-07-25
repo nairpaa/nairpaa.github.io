@@ -20,6 +20,7 @@ Catatan ini berisi tentang teori dasar *red teaming*, cara merencanakan serangan
 5. [Introduction to C2](/posts/intro-to-c2/)
 6. [Introduction to External Reconnaissance](/posts/intro-to-external-recon/)
 7. [Initial Access](/posts/initial-access/)
+8. [Windows Host Reconnaissance](/posts/windows-host-reconnaissance/)
 
 ## 0x2 - References
 
