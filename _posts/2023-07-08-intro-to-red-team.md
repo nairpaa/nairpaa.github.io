@@ -21,6 +21,7 @@ Catatan ini berisi tentang teori dasar *red teaming*, cara merencanakan serangan
 6. [Introduction to External Reconnaissance](/posts/intro-to-external-recon/)
 7. [Initial Access](/posts/initial-access/)
 8. [Windows Host Reconnaissance](/posts/windows-host-reconnaissance/)
+9. [Windows Privilege Escalataion](/posts/windows-privilege-escalation/)
 
 ## 0x2 - References
 
