@@ -2,7 +2,7 @@
 title: '[Misconfig] Weak Service Permissions'
 date: 2023-07-25 22:54:22 +0700
 categories: [Privilege Escalation, Windows Privilege Escalation]
-tags: [red team, privilege escalation, windows hacking, windows privilege escalation]     # TAG names should always be lowercase
+tags: [red team, privilege escalation, what is, windows hacking, windows privilege escalation, service exploit, misconfig]        # TAG names should always be lowercase
 author: nairpaa
 ---
 
