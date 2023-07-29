@@ -2,7 +2,7 @@
 title: '[Credential Theft] Extracting Kerberos Tickets'
 date: 2023-07-29 11:11:22 +0700
 categories: ['Active Directory', 'Post Compromise Attack']
-tags: [red team, persistence, active directory hacking, windows hacking, post compromise attack, credential theft, mimikatz, cobalt strike, kerberos]     # TAG names should always be lowercase
+tags: [red team, active directory hacking, windows hacking, post compromise attack, credential theft, mimikatz, cobalt strike, kerberos]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
