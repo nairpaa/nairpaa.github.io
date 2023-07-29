@@ -2,7 +2,7 @@
 title: 'Persistence via Registry AutoRun'
 date: 2023-07-26 09:42:22 +0700
 categories: ['Windows Hacking', 'Windows Persistence']
-tags: [red team, Persistence, windows hacking, windows Persistence, registry]     # TAG names should always be lowercase
+tags: [red team, persistence, windows hacking, windows persistence, registry]     # TAG names should always be lowercase
 author: nairpaa
 ---
 

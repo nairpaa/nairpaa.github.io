@@ -2,7 +2,7 @@
 title: 'Persistence via Task Scheduler'
 date: 2023-07-26 09:20:22 +0700
 categories: ['Windows Hacking', 'Windows Persistence']
-tags: [red team, Persistence, windows hacking, windows Persistence, task scheduler]     # TAG names should always be lowercase
+tags: [red team, persistence, windows hacking, windows persistence, task scheduler]     # TAG names should always be lowercase
 author: nairpaa
 ---
 

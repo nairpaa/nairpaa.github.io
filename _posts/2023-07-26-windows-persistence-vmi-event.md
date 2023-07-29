@@ -2,7 +2,7 @@
 title: 'Persistence via WMI Event Subscriptions'
 date: 2023-07-26 11:31:22 +0700
 categories: ['Windows Hacking', 'Windows Persistence']
-tags: [red team, Persistence, windows hacking, windows Persistence, wmi exploit]     # TAG names should always be lowercase
+tags: [red team, persistence, windows hacking, windows persistence, wmi exploit]     # TAG names should always be lowercase
 author: nairpaa
 ---
 

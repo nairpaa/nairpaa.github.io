@@ -2,7 +2,7 @@
 title: 'Persistence via Windows Services'
 date: 2023-07-26 10:58:22 +0700
 categories: ['Windows Hacking', 'Windows Persistence']
-tags: [red team, Persistence, windows hacking, windows Persistence, service exploit]     # TAG names should always be lowercase
+tags: [red team, persistence, windows hacking, windows persistence, service exploit]     # TAG names should always be lowercase
 author: nairpaa
 ---
 

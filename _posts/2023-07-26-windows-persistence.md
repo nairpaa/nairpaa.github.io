@@ -2,7 +2,7 @@
 title: '01 - Introduction to Windows Persistence'
 date: 2023-07-25 17:49:22 +0700
 categories: ['Windows Hacking', 'Windows Persistence']
-tags: [red team, introduction, what is, Persistence, windows hacking, windows Persistence]     # TAG names should always be lowercase
+tags: [red team, introduction, what is, persistence, windows hacking, windows persistence]     # TAG names should always be lowercase
 author: nairpaa
 ---
 

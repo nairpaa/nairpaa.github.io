@@ -2,7 +2,7 @@
 title: 'Persistence via Startup Folder'
 date: 2023-07-26 09:25:22 +0700
 categories: ['Windows Hacking', 'Windows Persistence']
-tags: [red team, Persistence, windows hacking, windows Persistence, startup]     # TAG names should always be lowercase
+tags: [red team, persistence, windows hacking, windows persistence, startup]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
