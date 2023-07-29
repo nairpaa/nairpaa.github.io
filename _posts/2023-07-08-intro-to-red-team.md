@@ -23,6 +23,7 @@ Catatan ini berisi tentang teori dasar *red teaming*, cara merencanakan serangan
 8. [Windows Host Reconnaissance](/posts/windows-host-reconnaissance/)
 9. [Windows Privilege Escalataion](/posts/windows-privilege-escalation/)
 10. [Windows Persistence](/posts/windows-persistence/)
+11. [AD/Windows Credential Theft](/posts/credential-theft/)
 
 ## 0x2 - References
 
