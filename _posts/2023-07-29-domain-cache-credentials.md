@@ -1,5 +1,5 @@
 ---
-title: '[Credential Theft] Domain Caache Credentials'
+title: '[Credential Theft] Domain Cache Credentials'
 date: 2023-07-29 11:57:22 +0700
 categories: ['Active Directory', 'Post Compromise Attack']
 tags: [red team, active directory hacking, windows hacking, post compromise attack, credential theft, mimikatz, cobalt strike, dcc]     # TAG names should always be lowercase
