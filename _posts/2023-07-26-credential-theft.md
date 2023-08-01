@@ -2,7 +2,7 @@
 title: '[Credential Theft] 01 - Introduction'
 date: 2023-07-26 14:51:22 +0700
 categories: ['Active Directory', 'Post Compromise Attack']
-tags: [red team, active directory hacking, windows hacking, post compromise attack, credential theft, mimikatz, cobalt strike]     # TAG names should always be lowercase
+tags: [red team, introduction, what is, active directory hacking, windows hacking, post compromise attack, credential theft, mimikatz, cobalt strike]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
