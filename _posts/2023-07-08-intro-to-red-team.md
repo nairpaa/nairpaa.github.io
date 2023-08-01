@@ -25,6 +25,7 @@ Catatan ini berisi tentang teori dasar *red teaming*, cara merencanakan serangan
 10. [Windows Persistence](/posts/windows-persistence/)
 11. [AD/Windows Credential Theft](/posts/credential-theft/)
 12. [Kerberos Attack](/posts/intro-to-kerberos/)
+13. [AD Certificate Services](/posts/intro-to-ad-cs/)
 
 ## 0x2 - References
 
