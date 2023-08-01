@@ -2,7 +2,7 @@
 title: '[AD CS] User & Computer Persistence'
 date: 2023-08-02 03:23:22 +0700
 categories: ['Active Directory', 'Post Compromise Attack']
-tags: [red team, introduction, what is, active directory hacking, windows hacking, post compromise attack, ad cs, persistence]     # TAG names should always be lowercase
+tags: [red team, active directory hacking, windows hacking, post compromise attack, ad cs, persistence]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
