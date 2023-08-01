@@ -35,7 +35,7 @@ Penjelasan:
 3. [AS-REP Roasting](/posts/as-rep-roasting/)
 3. [Unconstrained Delegation](/posts/kerberos-unconstrained-delegation/) 
 4. [Constrained Deletagation](/posts/kerberos-constrained-delegation/) 
-5. S4U2Self Abuse 
+5. [S4U2Self Abuse](/posts/s4u2self-abuse/)
 6. Resource-Based Constrained Delegation (RBCD)
 7. Shadow Credentials
 
