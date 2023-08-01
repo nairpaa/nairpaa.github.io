@@ -9,7 +9,7 @@ author: nairpaa
 
 *Whilst Kerberos pre-authentication* biasanya dilakukan dengan menggunakan kunci simetris yang berasal dari password klien, kunci asimetris juga dapat dilakukan melalui *Public Key Cryptography for Initial Authentication* (PKINIT).  
 
-Jika *PKI solution* sudah tersedia, seperti [Active Directory Certificate Services](/posts/intro-to-adcs), Domain Controller dan anggotanya bertukar kunci publik (*public key*) melalui *Certificate Authority* yang sesuai. Ini disebut model *Certificate Trust*.
+Jika *PKI solution* sudah tersedia, seperti [Active Directory Certificate Services](/posts/intro-to-ad-cs/), Domain Controller dan anggotanya bertukar kunci publik (*public key*) melalui *Certificate Authority* yang sesuai. Ini disebut model *Certificate Trust*.
 
 Ada juga model *Key Trust*, di mana kepercayaan dibangun berdasarkan data kunci raw, bukan sertifikat.  
 
