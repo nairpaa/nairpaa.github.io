@@ -24,6 +24,7 @@ Catatan ini berisi tentang teori dasar *red teaming*, cara merencanakan serangan
 9. [Windows Privilege Escalataion](/posts/windows-privilege-escalation/)
 10. [Windows Persistence](/posts/windows-persistence/)
 11. [AD/Windows Credential Theft](/posts/credential-theft/)
+12. [Kerberos Attack](/posts/intro-to-kerberos/)
 
 ## 0x2 - References
 
