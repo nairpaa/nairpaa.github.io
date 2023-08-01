@@ -33,7 +33,7 @@ Penjelasan:
 1. [Introduction to Kerberos](/posts/intro-to-kerberos/)
 2. [Kerberoasting](/posts/kerberoasting/) 
 3. [AS-REP Roasting](/posts/as-rep-roasting/)
-3. Unconstrained Delegation 
+3. [Unconstrained Delegation](/posts/kerberos-unconstrained-delegation/) 
 4. Constrained Deletagation 
 5. Alternate Service Name 
 6. S4U2Self Abuse 
