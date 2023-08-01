@@ -36,8 +36,8 @@ Penjelasan:
 3. [Unconstrained Delegation](/posts/kerberos-unconstrained-delegation/) 
 4. [Constrained Deletagation](/posts/kerberos-constrained-delegation/) 
 5. [S4U2Self Abuse](/posts/s4u2self-abuse/)
-6. Resource-Based Constrained Delegation (RBCD)
-7. Shadow Credentials
+6. [Resource-Based Constrained Delegation (RBCD)](/posts/resource-based-constrained-delegation/)
+7. [Shadow Credentials](/posts/shadow-credentials/)
 
 ---
 
