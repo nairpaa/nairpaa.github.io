@@ -34,11 +34,10 @@ Penjelasan:
 2. [Kerberoasting](/posts/kerberoasting/) 
 3. [AS-REP Roasting](/posts/as-rep-roasting/)
 3. [Unconstrained Delegation](/posts/kerberos-unconstrained-delegation/) 
-4. Constrained Deletagation 
-5. Alternate Service Name 
-6. S4U2Self Abuse 
-7. Resource-Based Constrained Delegation 
-8. Shadow Credentials
+4. [Constrained Deletagation](/posts/kerberos-constrained-delegation/) 
+5. S4U2Self Abuse 
+6. Resource-Based Constrained Delegation (RBCD)
+7. Shadow Credentials
 
 ---
 
