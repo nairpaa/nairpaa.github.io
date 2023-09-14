@@ -12,7 +12,7 @@ Pada kesempatan kali ini, kita akan mempelajari hal-hal yang perlu disiapkan seb
 
 *Engagement Planning* adalah tahap awal dari setiap operasi *Red Teaming*, dan sangat penting untuk keberhasilan seluruh operasi.
 
-Tahap ini mencakup persiapan dan perencanaan yang diperlukan sebelum *Red Team* dapat mulai melakukan aktivitas mereka.
+Tahap ini mencakup persiapan dan perencanaan yang diperlukan sebelum *Red Teamer* dapat mulai melakukan aktivitas mereka.
 
 Ada beberapa aspek yang harus dipertimbangkan dalam merencanakan sebuah aktivitas *Red Teaming*. Berikut penjelasan singkatnya:
 
@@ -33,7 +33,7 @@ Tujuan yang solid harus diputuskan untuk mendapatkan *Red Team Engagement* yang 
 
 ## 0x2 - Threat Model
 
-Pada tahap ini *Red Team* menyusun model ancaman yang realistis dan relevan terhadap organisasi sesuai *scope* yang ditentukan sebelumnya.
+Pada tahap ini, *Red Teamer* menyusun model ancaman yang realistis dan relevan terhadap organisasi sesuai *scope* yang ditentukan sebelumnya.
 
 Model ini akan digunakan oleh *Red Team* sebagai metode serangan (TTPs) yang akan dilakukan.
 
