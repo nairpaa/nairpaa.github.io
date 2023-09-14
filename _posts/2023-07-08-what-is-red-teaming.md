@@ -55,7 +55,7 @@ Informasi ini kemudian dapat digunakan untuk meningkatkan pertahanan organisasi 
 *Red Team Engagement* sering kali disamakan dengan *Penetration Testing*, tetapi keduanya tidak lah sama.
 
 *Red Teaming* memiliki beberapa atribut yang membedakannya dengan *offensive security* yang lain, yang paling utama diantaranya:
-- **Emulation of the TTPs**: yaitu melakukan emulasi serangan menggunakan metode yang sama seperti penyerang sebenarnya.
+- **Emulation of the TTPs**: yaitu melakukan emulasi serangan menggunakan metode yang sama seperti penyerang sebenarnya. Meskipun *Penetration Testing* mungkin juga mempertimbangkan TTP, fokus utamanya biasanya pada identifikasi dan eksploitasi kerentanan tertentu dalam waktu yang ditentukan. Menggunakan contoh mendapatkan akses ke mail server, *Red Team Engagement* mungkin melibatkan eksploitasi sistem dan upaya *phishing*, sedangkan dalam *Penetration Testing*, kegiatan *phishing* tidak dilakukan.
 - **Campaign-based testing**: adalah pendekatan di mana serangan disimulasikan selama periode waktu yang cukup lama, biasanya beberapa minggu atau bulan. Ini berarti bahwa serangan tidak hanya terjadi sekali, tetapi sebagai bagian dari kampanye yang berkelanjutan yang meniru bagaimana penyerang sebenarnya mungkin beroperasi.
 
 Kedua aspek penting tersebut membantu membuat simulasi serangan menjadi lebih realistis dan memberikan gambaran yang lebih baik tentang bagaimana organisasi akan merespons serangan nyata.
@@ -133,7 +133,7 @@ Idenya adalah bahwa dokter tidak boleh mengambil risiko melakukan hal yang lebih
 
 Prinsip ini sangat relevan bagi profesional keamanan siber. Tujuannya adalah untuk meningkatkan keamanan klien mereka, bukan untuk membahayakan atau melemahkan sistem keamanan mereka.
 
-Dalam praktiknya hal ini tidak selalu sederhana. Mirip dengan dokter yang terkadang harus menyakiti pasien mereka untuk kebaikan jangka panjang (seperti operasi), anggota *Red Team* mungkin perlu melakukan tindakan yang berpotensi merugikan dalam rangka untuk menguji dan meningkatkan keamanan sistem.
+Dalam praktiknya hal ini tidak selalu sederhana. Mirip dengan dokter yang terkadang harus menyakiti pasien mereka untuk kebaikan jangka panjang (seperti operasi), *Red Teamer* mungkin perlu melakukan tindakan yang berpotensi merugikan dalam rangka untuk menguji dan meningkatkan keamanan sistem.
 
 Contohnya adalah menonaktifkan kontrol keamanan, menambahkan pengguna ke grup yang memiliki hak istimewa, atau membuat *backdoor* administratif ke sistem.
 
