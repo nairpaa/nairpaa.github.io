@@ -72,7 +72,7 @@ Kedua aspek penting tersebut membantu membuat simulasi serangan menjadi lebih re
 
 Hasil dari *Red Teaming* adalah memang dapat mengidentifikasi kerentanan, tetapi yang lebih penting, *Red Teaming* memberikan pemahaman tentang sejauh mana kemampuan *Blue Team* dalam mendeteksi, mencegah, dan merespon ancaman.
 
-![IT Security: Perception vs Reality](http://redteam.guide/assets/images/threat_gets_a_vote-6724612fc1058a2b4e0a729a0d1bd348.png){: w="500" h="400" }
+![IT Security: Perception vs Reality](https://redteam.guide/assets/images/threat_gets_a_vote-6724612fc1058a2b4e0a729a0d1bd348.png){: w="500" h="400" }
 _IT Security: Perception vs Reality_
 
 *Red Team* memberikan perspektif yang berlawanan dengan menantang asumsi yang dibuat oleh organisasi atau *Blue Team*.

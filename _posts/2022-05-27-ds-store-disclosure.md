@@ -6,7 +6,7 @@ tags: [web, pentest]     # TAG names should always be lowercase
 author: nairpaa
 ---
 
-File [`.DS_Store` (Desktop Services Store)](http://en.wikipedia.org/wiki/.DS_Store) adalah file yang dibuat Mac OS X untuk pengaturan foldernya sama seperti file `desktop.ini` pada Windows.
+File [`.DS_Store` (Desktop Services Store)](https://en.wikipedia.org/wiki/.DS_Store) adalah file yang dibuat Mac OS X untuk pengaturan foldernya sama seperti file `desktop.ini` pada Windows.
 
 File `.DS_Store` berisi tentang informasi posisi icon dalam folder, background folder, dan informasi lainnya.
 

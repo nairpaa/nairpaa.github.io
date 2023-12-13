@@ -14,7 +14,7 @@ Kumpulan aplikasi yang membantu untuk mencatat informasi yang dikumpulkan selama
 
 **Note Apps**
 - [Obsidian](https://obsidian.md/)
-- [KeepNote](http://keepnote.org/)
+- [KeepNote](https://keepnote.org/)
 - [Cherrytree](https://www.giuspen.com/cherrytree/)
 - [Joplin](https://joplinapp.org/)
 - [Notion](https://www.notion.so/)
@@ -122,10 +122,8 @@ Berikut adalah beberapa artikel dan *tools* yang bisa kita gunakan untuk membuat
 - [Twitter Advanced Search](https://twitter.com/search-advanced)
 - [Social Bearing](https://socialbearing.com/)
 - [Twitonomy](https://www.twitonomy.com/)
-- [Sleeping Time](http://sleepingtime.org/)
 - [Mentionmapp](https://mentionmapp.com/)
 - [Tweetbeaver](https://tweetbeaver.com/)
-- [Spoonbill.io](http://spoonbill.io/)
 - [Tinfoleak](https://tinfoleak.com/)
 - [TweetDeck](https://tweetdeck.com/)
 
@@ -153,7 +151,6 @@ Berikut adalah beberapa artikel dan *tools* yang bisa kita gunakan untuk membuat
 ➜ exiftool example.png
 ```
 - [exiftool](https://exiftool.org/)
-- [Jeffrey's Image Metadata Viewer](http://exif.regex.info/exif.cgi)
 
 **Identifying Geopgraphical Locations**
 - [GeoGuessr](https://www.geoguessr.com)
@@ -208,7 +205,7 @@ Berikut adalah beberapa artikel dan *tools* yang bisa kita gunakan untuk membuat
  - [Visual Ping](https://visualping.io/)
  - [BuiltWith](https://builtwith.com/)
  - [SpyOnWeb](https://spyonweb.com/)
- - [Back Link Watch](http://backlinkwatch.com/index.php)
+ - [Back Link Watch](https://backlinkwatch.com/index.php)
  - [Wayback Machine](https://web.archive.org/)
 
 ## 0x12 - Business OSINT

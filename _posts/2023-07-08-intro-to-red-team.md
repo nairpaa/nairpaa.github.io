@@ -40,7 +40,7 @@ Tujuan saya membuat artikel ini adalah sebagai catatan pribadi ketika saya mempe
 Ketika mempelajari *red teaming* banyak sumber referensi yang saya gunakan, diantaranya:
 - Pengalaman kerja saya sebagai *Cyber Security Consultant*
 - [Daniel Miessler's Blog](https://danielmiessler.com/p/red-blue-purple-teams/)
-- [Redteam.guide](http://redteam.guide/docs/guides)
+- [Redteam.guide](https://redteam.guide/docs/guides)
 - [CRTO - Zero Point Security](https://training.zeropointsecurity.co.uk/courses/red-team-ops)
 - [TCM Security Academy](https://academy.tcm-sec.com/)
 - Dan lain-lain

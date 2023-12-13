@@ -10,7 +10,7 @@ Tiket Kerberos adalah bagian penting dari protokol otentikasi Kerberos, yang dig
 
 Salah satu konsekuensi yang tidak menguntungkan dari teknik-teknik [Credential Thieft](/posts/credential-theft/) sebelumnya adalah dapat diaudit dan di-*log* dengan mudah.
 
-Oleh karena itu, *tool* [Rubeus]() yang dirancang khusus untuk interaksi dan penyalahgunaan Kerberos dapat menjadi lebih berguna karena menggunakan API Windows yang *legit*.
+Oleh karena itu, *tool* [Rubeus](https://github.com/GhostPack/Rubeus) yang dirancang khusus untuk interaksi dan penyalahgunaan Kerberos dapat menjadi lebih berguna karena menggunakan API Windows yang *legit*.
 
 ## 0x1 - Exploitation Stages
 
