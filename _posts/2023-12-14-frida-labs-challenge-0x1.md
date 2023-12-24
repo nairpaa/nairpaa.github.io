@@ -6,8 +6,7 @@ tags: ['android', 'frida', 'ctf', 'ctf android', 'reverse engineering', 'frida-l
 author: nairpaa
 ---
 
-
-Dalam bagian ini, kita akan fokus pada pemahaman, persiapan, dan memulai proses *hooking method* menggunakan Frida. 
+Dalam kesempatan ini, kita akan fokus pada pemahaman, persiapan, dan memulai proses *hooking method* menggunakan Frida. 
 
 Sebagai studi kasus, kita akan menerapkannya pada aplikasi **Challenge 0x1.apk**, yang bisa diunduh dari [sini](https://github.com/DERE-ad2001/Frida-Labs/raw/main/Frida%200x1/Challenge%200x1.apk).
 
