@@ -7,7 +7,7 @@ author: nairpaa
 ---
 
 
-Dalam bagian ini, kita akan fokus pada pemahaman dan persiapan Frida, serta memulai proses *hooking method* menggunakan Frida. 
+Dalam bagian ini, kita akan fokus pada pemahaman, persiapan, dan memulai proses *hooking method* menggunakan Frida. 
 
 Sebagai studi kasus, kita akan menerapkannya pada aplikasi **Challenge 0x1.apk**, yang bisa diunduh dari [sini](https://github.com/DERE-ad2001/Frida-Labs/raw/main/Frida%200x1/Challenge%200x1.apk).
 
@@ -16,6 +16,7 @@ Sebagai studi kasus, kita akan menerapkannya pada aplikasi **Challenge 0x1.apk**
 - Dasar *reverse engineering* menggunakan [JADX](https://github.com/skylot/jadx).
 - Kemampuan untuk memahami kode Java.
 - Kemampuan untuk menulis kode Javascript.
+- Familiar dengan [ADB](https://developer.android.com/tools/adb).
 - Perangkat Android yang sudah di-root.
 
 ## 0x2 - What is Frida?
@@ -45,7 +46,7 @@ Instalasi Frida dapat dilakukan menggunakan `pip`:
 
 Saat ini, saya menggunakan Frida versi 16.1.8.
 
-Langkah berikutnya adalah menjalankan Frida server di perangkat Android. Pertama, unduh Frida server versi 16.1.8 yang cocok dengan arsitektur Android kamu dari [situs resmi Frida](https://github.com/frida/frida/releases).
+Langkah berikutnya adalah menjalankan Frida server di perangkat Android. Pertama, unduh Frida server versi 16.1.8 (sesuaikan dengan versi Frida) dari [situs resminya](https://github.com/frida/frida/releases). Pastikan untuk menggunakan Frida server yang cocok dengan arsitektur Android yang digunakan.
 
 Jika kamu tidak yakin tentang arsitektur Android yang digunakan, gunakan perintah `adb` berikut:
 
@@ -69,7 +70,7 @@ Setelah diunduh, ekstrak file tersebut dan pindahkan ke direktori yang *writeabl
 ```
 {: .nolineno }
 
-Kemudian, akses direktori tersebut melalui shell:
+Kemudian, akses direktori tersebut melalui *shell*:
 
 ```bash
 ➜ adb shell
@@ -145,7 +146,7 @@ Sekarang, mari kita coba meng-*hook* sebuah metode dalam sebuah aplikasi. Kita a
 
 Aplikasi studi kasus kali ini memiliki *Identifier* `com.ad2001.frida0x1`.
 
-Sebelum mengaitkan aplikasi ke Frida, mari kita luangkan waktu untuk memahami aplikasi. Setelah membuka aplikasi, kita dapat melihat antarmuka di bawah ini:
+Sebelum meng-*hook* aplikasi menggunakan Frida, mari kita luangkan waktu untuk memahami aplikasi. Setelah membuka aplikasi, kita dapat melihat antarmuka di bawah ini:
 
 ![Tampilan Aplikasi](/assets/img/posts/frida-labs-challenge-0x1/6.png)
 _Tampilan Aplikasi_
@@ -160,7 +161,7 @@ Tertulis `Try again`. Jadi, mari kita coba dekompilasi aplikasi menggunakan `JAD
 ![Reverse Engineering Aplikasi Menggunakan JADX](/assets/img/posts/frida-labs-challenge-0x1/8.png)
 _Reverse Engineering Aplikasi Menggunakan JADX_
 
-Hanya dengan sekilas melihat kode Java, kita dapat memahami bahwa aplikasi mengambil input-an dari pengguna, mengubahnya menjadi integer, dan mengirimkan integer tersebut ke metode `check()`.
+Hanya dengan sekilas melihat kode Java, kita dapat memahami bahwa aplikasi mengambil input-an pengguna, mengubahnya menjadi integer, dan mengirimkan integer tersebut ke metode `check()`.
 
 ```java
 public void onClick(View view) {
@@ -286,7 +287,7 @@ Pertama, mari kita *hook* aplikasi dengan Frida.
 ```
 {: .nolineno }
 
-Oke, sekarang Frida telah terhubung. Untuk menjalankan *script*, cukup *copy* dan *paste* ke *console*, seperti berikut, lalu tekan enter.
+Oke, sekarang Frida telah terhubung. Untuk menjalankan *script*, cukup *copy* dan *paste* ke *console*, seperti berikut, lalu tekan **Enter**.
 
 ![Menjalankan Kode Javascript Di Console Frida](/assets/img/posts/frida-labs-challenge-0x1/11.png)
 
