@@ -141,7 +141,7 @@ Sekarang, aplikasi telah dijalankan dan berhasil terhubung dengan Frida.
 
 Sekarang, mari kita coba meng-*hook* sebuah metode dalam sebuah aplikasi. Kita akan melakukan ini menggunakan API JavaScript, tetapi perlu dicatat bahwa Frida juga mendukung Python.
 
-### A. Challenge 0x1 App
+## 0x6 - Challenge 0x1 App
 
 Aplikasi studi kasus kali ini memiliki *Identifier* `com.ad2001.frida0x1`.
 
@@ -205,7 +205,7 @@ Kita bisa dengan mudah mendapatkan *flag* menggunakan metode alternatif, tetapi 
 
 Sekarang kita tahu bagaimana cara menyelesaikannya, mari kita coba menulis beberapa *script* Frida.
 
-### B. Hooking a method
+## 0x7 - Hooking a method
 
 Pertama, izinkan saya memberikan sebuah template *script*, kemudian saya akan menjelaskannya.
 
@@ -233,7 +233,7 @@ Java.perform(function (){
 
 Sekarang pertanyaannya adalah, apa yang akan kita *hook*?
 
-#### Hooking the get_random() method
+### A. Hooking the get_random() method
 
 Mari kita coba meng-*hook* metode `get_random()` kali ini. *Package* yang digunakan yaitu `com.ad2001.frida0x1`. 
 
@@ -418,7 +418,7 @@ Nilai acak yang dihasilkan adalah `9`. *script* kita juga menghitung nilai untuk
 
 Lihat! Kita berhasil mendapatkan *flag*-nya.
 
-#### Hooking the check() method
+### B. Hooking the check() method
 
 Mari kita coba metode kedua yang saya sebutkan [di awal](#a-challenge-0x1-app). Kita akan meng-*hook* ke metode `check()` dan menangkap argumennya, karena argumen yang dikirimkan ke metode `check()` mengandung nomor acak.
 
