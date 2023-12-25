@@ -8,7 +8,7 @@ author: nairpaa
 
 Dalam kesempatan ini, kita akan mempelajari cara mengubah nilai variabel menggunakan Frida. 
 
-Sebagai studi kasus, kita akan menerapkannya pada aplikasi '**Challenge 0x3.apk**', yang bisa diunduh dari [sini](https://raw.githubusercontent.com/DERE-ad2001/Frida-Labs/main/Frida%200x3/Challenge%200x3.apk).
+Sebagai studi kasus, kita akan menerapkannya pada aplikasi **Challenge 0x3.apk**, yang bisa diunduh dari [sini](https://raw.githubusercontent.com/DERE-ad2001/Frida-Labs/main/Frida%200x3/Challenge%200x3.apk).
 
 ## 0x1 - Prerequisites
 
@@ -91,9 +91,10 @@ Java.perform(function (){
 
 Mari kita jalankan *script*-nya.
 
+```bash
+➜ frida -U -f com.ad2001.frida0x3
 ```
-frida -U -f com.ad2001.frida0x3
-```
+{: .nolineno }
 
 ![Mengubah Nilai Variable Menggunakan Frida](/assets/img/posts/frida-labs-challenge-0x3/4.png)
 _Mengubah Nilai Variable Menggunakan Frida_
@@ -129,13 +130,14 @@ Java.perform(function (){
 
 Tutup aplikasinya dan jalankan kembali menggunakan Frida.
 
+```bash
+➜ frida -U -f com.ad2001.frida0x3
 ```
- frida -U -f com.ad2001.frida0x3
-```
+{: .nolineno }
 
 Sekarang, jalankan *script*-nya.
 
-![Xyz](/assets/img/posts/frida-labs-challenge-0x3/5.png)
-_Xyz_
+![Memanggil Metode Menggunakan Perulangan](/assets/img/posts/frida-labs-challenge-0x3/5.png)
+_Memanggil Metode Menggunakan Perulangan_
 
 Bisa kita lihat, *script* tersebut akan memanggil metode `increase()` berulang kali dan nilai variable `code` akan menjadi `256`.  Ketika kita klik tombolnya, aplikasi akan menampilkan *flag* seperti yang kita harapkan.

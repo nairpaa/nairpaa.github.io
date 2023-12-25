@@ -43,6 +43,7 @@ Mari kita mulai dengan mencari *identifier* dari *package* aplikasi.
 ```bash
 ➜ frida-ps -Uai
 ```
+{: .nolineno }
 
 ![Mencari Nama Package Aplikasi Melalui Frida](/assets/img/posts/frida-labs-challenge-0x2/3.png)
 _Mencari Nama Package Aplikasi Melalui Frida_
@@ -87,8 +88,9 @@ Java.perform(function (){
 Mari kita jalankan *script* tersebut.
 
 ```bash
-frida -U -f com.ad2001.frida0x2
+➜ frida -U -f com.ad2001.frida0x2
 ```
+{: .nolineno }
 
 ![Mendapatkan Flag Dengan Memanggil Static Method](/assets/img/posts/frida-labs-challenge-0x2/5.png)
 _Mendapatkan Flag Dengan Memanggil Static Method_
