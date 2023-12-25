@@ -207,7 +207,7 @@ Sekarang kita tahu bagaimana cara menyelesaikannya, mari kita coba menulis beber
 
 ## 0x7 - Hooking a method
 
-Pertama, izinkan saya memberikan sebuah template *script*, kemudian saya akan menjelaskannya.
+Pertama, izinkan saya memberikan sebuah *template script*, kemudian saya akan menjelaskannya.
 
 ```javascript
 Java.perform(function (){
