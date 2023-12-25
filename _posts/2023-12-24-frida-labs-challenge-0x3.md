@@ -6,7 +6,7 @@ tags: ['android', 'frida', 'ctf', 'ctf android', 'reverse engineering', 'frida-l
 author: nairpaa
 ---
 
-Dalam bagian ini, kita akan mempelajari cara mengubah nilai variabel menggunakan Frida. 
+Dalam kesempatan ini, kita akan mempelajari cara mengubah nilai variabel menggunakan Frida. 
 
 Sebagai studi kasus, kita akan menerapkannya pada aplikasi '**Challenge 0x3.apk**', yang bisa diunduh dari [sini](https://raw.githubusercontent.com/DERE-ad2001/Frida-Labs/main/Frida%200x3/Challenge%200x3.apk).
 
