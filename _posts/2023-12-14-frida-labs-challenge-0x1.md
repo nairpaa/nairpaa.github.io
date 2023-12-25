@@ -420,7 +420,7 @@ Lihat! Kita berhasil mendapatkan *flag*-nya.
 
 ### B. Hooking the check() method
 
-Mari kita coba metode kedua yang saya sebutkan [di awal](#a-challenge-0x1-app). Kita akan meng-*hook* ke metode `check()` dan menangkap argumennya, karena argumen yang dikirimkan ke metode `check()` mengandung nomor acak.
+Mari kita coba metode kedua yang saya sebutkan [di awal](#0x6---challenge-0x1-app). Kita akan meng-*hook* ke metode `check()` dan menangkap argumennya, karena argumen yang dikirimkan ke metode `check()` mengandung nomor acak.
 
 ```java
 final int i = get_random();
