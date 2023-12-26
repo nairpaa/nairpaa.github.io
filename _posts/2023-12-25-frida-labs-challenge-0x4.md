@@ -109,7 +109,7 @@ Java.perform(function (){
 Mari kita jalankan *script* tersebut.
 
 ```bash
-frida -U -f com.ad2001.frida0x4
+➜ frida -U -f com.ad2001.frida0x4
 ```
 {: .nolineno }
 
