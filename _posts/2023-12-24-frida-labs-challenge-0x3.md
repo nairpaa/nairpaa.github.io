@@ -1,5 +1,5 @@
 ---
-title: '[Frida Labs] 03 - Changing The Value of a Variable'
+title: '[Frida Labs] 03 - Changing the Value of a Variable'
 date: 2023-12-24 20:34:22 +0700
 categories: ['Mobile Application', 'Android Hacking']
 tags: ['android', 'frida', 'ctf', 'ctf android', 'reverse engineering', 'frida-labs']     # TAG names should always be lowercase

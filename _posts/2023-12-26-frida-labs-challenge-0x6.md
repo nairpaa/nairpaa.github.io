@@ -8,7 +8,7 @@ author: nairpaa
 
 Dalam kesempatan ini, kita akan mempelajari cara memanggil metode dengan argumen objek menggunakan Frida. 
 
-Sebagai studi kasus, kita akan menerapkannya pada aplikasi '**Challenge 0x6.apk**', yang bisa diunduh dari [sini](https://raw.githubusercontent.com/DERE-ad2001/Frida-Labs/main/Frida%200x6/Challenge%200x6.apk).
+Sebagai studi kasus, kita akan menerapkannya pada aplikasi **Challenge 0x6.apk**, yang bisa diunduh dari [sini](https://raw.githubusercontent.com/DERE-ad2001/Frida-Labs/main/Frida%200x6/Challenge%200x6.apk).
 
 ## 0x1 - Prerequisites
 
