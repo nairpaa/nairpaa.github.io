@@ -139,7 +139,7 @@ Sekarang, aplikasi telah dijalankan dan berhasil terhubung dengan Frida.
 
 **Hooking** merujuk pada proses intersepsi dan modifikasi perilaku fungsi atau metode dalam aplikasi. Sebagai contoh, kita dapat mengaitkan (*hook*) sebuah metode dalam aplikasi dan mengubah fungsionalitasnya sesuai keinginan.
 
-Sekarang, mari kita coba meng-*hook* sebuah metode dalam sebuah aplikasi. Kita akan melakukan ini menggunakan API JavaScript, tetapi perlu dicatat bahwa Frida juga mendukung Python.
+Sekarang, mari kita coba meng-*hook* sebuah metode dalam sebuah aplikasi. Kita akan melakukan ini menggunakan API JavaScript, tetapi perlu dicatat bahwa Frida juga mendukung bahasa pemrograman Python.
 
 ## 0x6 - Challenge 0x1 App
 
@@ -420,7 +420,7 @@ Lihat! Kita berhasil mendapatkan *flag*-nya.
 
 ### B. Hooking the check() method
 
-Mari kita coba metode kedua yang saya sebutkan [di awal](#0x6---challenge-0x1-app). Kita akan meng-*hook* ke metode `check()` dan menangkap argumennya, karena argumen yang dikirimkan ke metode `check()` mengandung nomor acak.
+Mari kita coba cara kedua yang saya sebutkan [di awal](#0x6---challenge-0x1-app). Kita akan meng-*hook* ke metode `check()` dan menangkap argumennya, karena argumen yang dikirimkan ke metode `check()` mengandung nomor acak.
 
 ```java
 final int i = get_random();
