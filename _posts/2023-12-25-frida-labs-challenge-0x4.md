@@ -8,7 +8,7 @@ author: nairpaa
 
 Dalam kesempatan ini, kita akan mempelajari cara membuat *class instance* menggunakan Frida. 
 
-Sebagai studi kasus, kita akan menerapkannya pada aplikasi **Challenge 0x4.apk**, yang bisa diunduh dari [sini](https://raw.githubusercontent.com/DERE-ad2001/Frida-Labs/main/Frida%200x4/app-debug.apk).
+Sebagai studi kasus, kita akan menerapkannya pada aplikasi **Challenge 0x4.apk**, yang bisa diunduh dari [sini](https://raw.githubusercontent.com/DERE-ad2001/Frida-Labs/main/Frida%200x4/Challenge%200x4.apk).
 
 ## 0x1 - Prerequisites
 
