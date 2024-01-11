@@ -31,7 +31,7 @@ Catatan ini mencakup berbagai teknik yang digunakan untuk melakukan eksploitasi 
 
 #### 2. Root Detection
 
-- [Rooting Device Realme 3 Pro](https://nairpaa.github.io/posts/rooting-realme-3-pro/)
+- [Rooting Device Realme 3 Pro](/posts/rooting-realme-3-pro/)
 - Detecting Root and Bypassing Anti-Root Android Flutter App
 - Detecting Root and Bypassing Anti-Root Android Kotlin App
 
@@ -42,17 +42,18 @@ Catatan ini mencakup berbagai teknik yang digunakan untuk melakukan eksploitasi 
 
 #### 4. Frida
 
-- [Frida-Labs 0x1: Frida setup, Hooking a method](https://nairpaa.github.io/posts/frida-labs-challenge-0x1/)
-- [Frida-Labs 0x2: Calling a static method](https://nairpaa.github.io/posts/frida-labs-challenge-0x2/)
-- [Frida-Labs 0x3: Changing the value of a variable](https://nairpaa.github.io/posts/frida-labs-challenge-0x3/)
-- [Frida-Labs 0x4: Creating a class instance](https://nairpaa.github.io/posts/frida-labs-challenge-0x4/)
-- [Frida-Labs 0x5: Invoking methods on an existing instance](https://nairpaa.github.io/posts/frida-labs-challenge-0x5/)
-- [Frida-Labs 0x6: Invoking a method with an object argument](https://nairpaa.github.io/posts/frida-labs-challenge-0x6/)
-- [Frida-Labs 0x7: Hooking the constructor](https://nairpaa.github.io/posts/frida-labs-challenge-0x7/)
-- [Frida-Labs 0x8: Introduction to native hooking](https://nairpaa.github.io/posts/frida-labs-challenge-0x8/)
-- [Frida-Labs 0x9: Changing the return value of a native function](https://nairpaa.github.io/posts/frida-labs-challenge-0x9/)
-- [Frida-Labs 0xA: Calling a native function](https://nairpaa.github.io/posts/frida-labs-challenge-0xa/)
-- [Frida-Labs 0xB: Patching instructions using X86Writer and ARM64Writer](https://nairpaa.github.io/posts/frida-labs-challenge-0xb/)
+- [Frida-Labs 0x1: Frida setup, Hooking a method](/posts/frida-labs-challenge-0x1/)
+- [Frida-Labs 0x2: Calling a static method](/posts/frida-labs-challenge-0x2/)
+- [Frida-Labs 0x3: Changing the value of a variable](/posts/frida-labs-challenge-0x3/)
+- [Frida-Labs 0x4: Creating a class instance](/posts/frida-labs-challenge-0x4/)
+- [Frida-Labs 0x5: Invoking methods on an existing instance](/posts/frida-labs-challenge-0x5/)
+- [Frida-Labs 0x6: Invoking a method with an object argument](/posts/frida-labs-challenge-0x6/)
+- [Frida-Labs 0x7: Hooking the constructor](/posts/frida-labs-challenge-0x7/)
+- [Frida-Labs 0x8: Introduction to native hooking](/posts/frida-labs-challenge-0x8/)
+- [Frida-Labs 0x9: Changing the return value of a native function](/posts/frida-labs-challenge-0x9/)
+- [Frida-Labs 0xA: Calling a native function](/posts/frida-labs-challenge-0xa/)
+- [Frida-Labs 0xB: Patching instructions using X86Writer and ARM64Writer](/posts/frida-labs-challenge-0xb/)
+- [FridaLab Walkthrough](/posts/fridalab-walkthrough/)
 - Detecting Frida and Bypassing Anti-Frida Android Flutter App
 - Detecting Frida and Bypassing Anti-Frida Android Kotlin App
 
