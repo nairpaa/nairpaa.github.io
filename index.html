@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nairpaa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="profile.ico" type="image/x-icon">
+  <style>
+    :root {
+      --bg-color: #0d0d0d;
+      --text-color: #e0e0e0; 
+      --accent: #668aff33;
+      --hover-glow: #00ffffcc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Fira Code', monospace;
+      background: var(--bg-color);
+      color: var(--text-color);
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      margin: 0.5rem 0;
+    }
+
+    .description {
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .social-icons a {
+      color: var(--text-color);
+      font-size: 1.5rem;
+      transition: 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      transition: 0.2s ease;
+    }
+
+    .link-card:hover {
+      border-color: var(--hover-glow);
+      background-color: #181818;
+      transform: scale(1.01);
+    }
+
+    .link-card i {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+      color: var(--hover-glow);
+    }
+
+    .link-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .link-card p {
+      margin: 0;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<div class="container">
+  <img src="profile.jpg" alt="Nairpaa" class="profile-pic">
+  <h1 style="color: var(--text-color)">Nairpaa</h1>
+  <p class="description">Script Kiddie | Reverse Engineer | Red Teamer</p>
+
+  <div class="social-icons">
+    <a href="https://twitter.com/nairpaa"><i class="fab fa-twitter"></i></a>
+    <a href="https://github.com/nairpaa"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/nairpaa"><i class="fab fa-linkedin"></i></a>
+    <a href="https://discord.com/users/709048608770490378"><i class="fab fa-discord"></i></a>
+  </div>
+
+  <div class="links">
+    <a href="https://re.nairpaa.me" class="link-card">
+        <i class="fas fa-code"></i>
+        <div class="text-left">
+          <h3>ReverseMe</h3>
+          <p>A beginner-friendly guide to reverse engineering, written in my own style.</p>
+        </div>
+    </a>
+    <a href="https://kud.nairpaa.me" class="link-card">
+      <i class="fas fa-bug"></i>
+      <div class="text-left">
+        <h3>KudNote</h3>
+        <p>Notes, techniques, and findings from my daily pentesting activities.</p>
+      </div>
+    </a>
+    <a href="https://blog.nairpaa.me" class="link-card">
+      <i class="fas fa-blog"></i>
+      <div class="text-left">
+        <h3>My Blog</h3>
+        <p>Thoughts, stories, and technical writeups from my journey in cyber security.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- Spiderweb Animation Script -->
+<script>
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+
+  const particles = [];
+  const numParticles = 100;
+  let mouse = { x: null, y: null };
+
+  for (let i = 0; i < numParticles; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: Math.random() * 0.6 - 0.3,
+      vy: Math.random() * 0.6 - 0.3
+    });
+  }
+
+  window.addEventListener("mousemove", function(e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  window.addEventListener("resize", function () {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  });
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+
+    for (let i = 0; i < numParticles; i++) {
+      let p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0 || p.x > width) p.vx *= -1;
+      if (p.y < 0 || p.y > height) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = "#00ffff55";
+      ctx.fill();
+    }
+
+    for (let i = 0; i < numParticles; i++) {
+      for (let j = i + 1; j < numParticles; j++) {
+        let dx = particles[i].x - particles[j].x;
+        let dy = particles[i].y - particles[j].y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 120) {
+          let mx = mouse.x;
+          let my = mouse.y;
+          let dmx = (particles[i].x - mx) ** 2 + (particles[i].y - my) ** 2;
+          let dmy = (particles[j].x - mx) ** 2 + (particles[j].y - my) ** 2;
+          let nearMouse = dmx < 10000 || dmy < 10000;
+
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = nearMouse ? "#00ffffcc" : "#00ffff22";
+          ctx.lineWidth = nearMouse ? 1.2 : 0.4;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+</body>
+</html>
