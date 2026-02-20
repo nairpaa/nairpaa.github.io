@@ -5,242 +5,659 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nairpaa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="icon" href="profile.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     :root {
-      --bg-color: #0d0d0d;
-      --text-color: #e0e0e0; 
-      --accent: #668aff33;
-      --hover-glow: #00ffffcc;
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #0d1117;
+      --surface-1: #161b22;
+      --surface-2: #21262d;
+      --surface-3: #30363d;
+      --accent: #ff4757;
+      --accent-dim: #c0392b;
+      --accent-glow: rgba(255, 71, 87, 0.3);
+      --text-primary: #d1d5db;
+      --text-muted: #6b7280;
+      --text-dimmed: #4b5563;
+      --green: #3fb950;
+      --red: #f85149;
+      --yellow: #d29922;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Fira Code', monospace;
-      background: var(--bg-color);
-      color: var(--text-color);
+      font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+      background: var(--bg-primary);
+      color: var(--text-primary);
       height: 100%;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    canvas {
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 3px; }
+
+    /* Scanline overlay */
+    .scanline {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 100;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.03) 0px,
+        rgba(0, 0, 0, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+      );
     }
 
+    /* Floating hashes background */
+    .floating-hashes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hash-char {
+      position: absolute;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      animation: floatDrift ease-in-out infinite;
+      user-select: none;
+      text-shadow: 0 0 6px var(--accent-glow);
+    }
+
+    @keyframes floatDrift {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      25% {
+        transform: translate(10px, -20px) rotate(3deg);
+      }
+      50% {
+        transform: translate(-8px, -40px) rotate(-2deg);
+      }
+      75% {
+        transform: translate(12px, -20px) rotate(4deg);
+      }
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+    }
+
+    /* Main container */
     .container {
       position: relative;
       z-index: 1;
       max-width: 640px;
-      margin: auto;
-      padding: 2rem;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Terminal window */
+    .terminal {
+      background: var(--surface-1);
+      border: 1px solid var(--surface-3);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Title bar */
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--surface-3);
+      gap: 0.5rem;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot.red { background: var(--red); }
+    .dot.yellow { background: var(--yellow); }
+    .dot.green { background: var(--green); }
+
+    .terminal-title {
+      flex: 1;
       text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .terminal-title-spacer {
+      width: 54px; /* balance the dots */
+    }
+
+    /* Terminal body */
+    .terminal-body {
+      padding: 1.5rem;
+    }
+
+    /* Prompt line */
+    .prompt {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .prompt-user {
+      color: var(--yellow);
+    }
+
+    .prompt-separator {
+      color: var(--text-muted);
+    }
+
+    .prompt-path {
+      color: var(--accent);
+    }
+
+    .prompt-symbol {
+      color: var(--text-primary);
+    }
+
+    .prompt-cmd {
+      color: var(--text-primary);
+    }
+
+    /* Profile section */
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .profile-pic {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      border: 2px solid var(--accent);
-      margin-bottom: 1rem;
+      border: 2px solid var(--surface-3);
+      flex-shrink: 0;
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
 
-    h1 {
-      margin: 0.5rem 0;
+    .profile-pic:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 16px var(--accent-glow);
     }
 
-    .description {
-      opacity: 0.8;
-      margin-bottom: 1.5rem;
+    .profile-info h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
     }
 
+    .profile-info h1 .accent {
+      color: var(--accent);
+    }
+
+    .typing-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-info .role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: var(--accent);
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Social icons */
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 1.2rem;
-      margin-bottom: 2rem;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
     }
 
     .social-icons a {
-      color: var(--text-color);
-      font-size: 1.5rem;
-      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 6px;
+      background: var(--surface-2);
+      border: 1px solid var(--surface-3);
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
     }
 
     .social-icons a:hover {
-      color: #ffffff;
+      color: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+      transform: translateY(-1px);
     }
 
+    /* Section label */
+    .section-label {
+      font-size: 0.7rem;
+      color: var(--text-dimmed);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--surface-3);
+    }
+
+    /* Link cards */
     .link-card {
       display: flex;
       align-items: center;
-      background-color: #111;
-      border: 1px solid #222;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      padding: 1rem;
+      background: var(--surface-2);
+      border: 1px solid var(--surface-3);
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+      padding: 0.85rem 1rem;
       text-decoration: none;
-      color: var(--text-color);
-      transition: 0.2s ease;
+      color: var(--text-primary);
+      transition: all 0.2s;
+      gap: 0.85rem;
     }
 
     .link-card:hover {
-      border-color: var(--hover-glow);
-      background-color: #181818;
-      transform: scale(1.01);
+      border-color: var(--accent);
+      background: var(--surface-2);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 8px var(--accent-glow);
     }
 
-    .link-card i {
-      margin-right: 1rem;
-      font-size: 1.5rem;
-      color: var(--hover-glow);
+    .link-card .icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: rgba(255, 71, 87, 0.08);
+      color: var(--accent);
+      font-size: 0.95rem;
+      flex-shrink: 0;
     }
 
-    .link-card h3 {
-      margin: 0;
-      font-size: 1.1rem;
-    }
-
-    .link-card p {
-      margin: 0;
+    .link-card .info h3 {
       font-size: 0.85rem;
-      opacity: 0.7;
+      font-weight: 500;
+      margin-bottom: 0.15rem;
     }
 
-    .text-left {
-      text-align: left;
+    .link-card .info p {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .link-card .arrow {
+      margin-left: auto;
+      color: var(--text-dimmed);
+      font-size: 0.75rem;
+      transition: all 0.2s;
+    }
+
+    .link-card:hover .arrow {
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+
+    /* More projects toggle */
+    .more-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-dimmed);
+      cursor: pointer;
+      padding: 0.5rem 0;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .more-toggle:hover {
+      color: var(--accent);
+    }
+
+    .more-toggle i {
+      font-size: 0.6rem;
+      transition: transform 0.2s;
+    }
+
+    .more-toggle.open i {
+      transform: rotate(90deg);
+    }
+
+    .more-projects {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .more-projects.show {
+      max-height: 300px;
+      overflow: visible;
+    }
+
+    /* Footer */
+    .terminal-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--surface-3);
+      font-size: 0.75rem;
+      color: var(--text-dimmed);
+    }
+
+    .terminal-footer .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Slide-in animation */
+    .slide-in {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: slideIn 0.4s ease forwards;
+    }
+
+    .slide-in:nth-child(1) { animation-delay: 0.1s; }
+    .slide-in:nth-child(2) { animation-delay: 0.2s; }
+    .slide-in:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .terminal-body {
+        padding: 1rem;
+      }
+
+      .profile {
+        gap: 1rem;
+      }
+
+      .profile-pic {
+        width: 64px;
+        height: 64px;
+      }
+
+      .profile-info h1 {
+        font-size: 1.1rem;
+      }
+
+      .prompt {
+        font-size: 0.75rem;
+      }
     }
   </style>
 </head>
 <body>
-<canvas id="canvas"></canvas>
+
+<!-- Scanline CRT effect -->
+<div class="scanline"></div>
+
+<!-- Floating hashes background -->
+<div class="floating-hashes" id="floatingHashes"></div>
 
 <div class="container">
-  <img src="profile.jpg" alt="Nairpaa" class="profile-pic">
-  <h1 style="color: var(--text-color)">Nairpaa</h1>
-  <p class="description">Consultant | Reverse Engineer | Red Teamer</p>
+  <div class="terminal">
 
-  <div class="social-icons">
-    <a href="https://github.com/nairpaa"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/nairpaa"><i class="fab fa-linkedin"></i></a>
-    <a href="https://discord.com/users/709048608770490378"><i class="fab fa-discord"></i></a>
-    <a href="https://twitter.com/nairpaa"><i class="fab fa-x-twitter"></i></a>
-  </div>
+    <!-- Title bar -->
+    <div class="terminal-header">
+      <div class="terminal-dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <span class="terminal-title">nairpaa@localhost:~</span>
+      <span class="terminal-title-spacer"></span>
+    </div>
 
-  <div class="links">
-    <a href="https://rev.nairpaa.me" class="link-card">
-        <i class="fas fa-code"></i>
-        <div class="text-left">
-          <h3>ReverseMe</h3>
-          <p>A beginner-friendly guide to reverse engineering, written in my own style.</p>
+    <!-- Terminal body -->
+    <div class="terminal-body">
+
+      <!-- Prompt -->
+      <div class="prompt">
+        <span class="prompt-user">nairpaa@localhost</span>
+        <span class="prompt-separator">:</span>
+        <span class="prompt-path">~</span>
+        <span class="prompt-symbol">$</span>
+        <span class="prompt-cmd">whoami --verbose</span>
+      </div>
+
+      <!-- Profile -->
+      <div class="profile">
+        <img src="profile.png" alt="Nairpaa" class="profile-pic">
+        <div class="profile-info">
+          <h1><span class="accent">~/</span>Nairpaa</h1>
+          <div class="typing-wrapper">
+            <span class="role" id="typingText"></span>
+            <span class="cursor-blink"></span>
+          </div>
         </div>
-    </a>
-    <a href="https://kud.nairpaa.me" class="link-card">
-      <i class="fas fa-bug"></i>
-      <div class="text-left">
-        <h3>KudNote</h3>
-        <p>Notes, techniques, and findings from my daily pentesting activities.</p>
       </div>
-    </a>
-    <a href="https://blog.nairpaa.me" class="link-card">
-      <i class="fas fa-blog"></i>
-      <div class="text-left">
-        <h3>My Blog</h3>
-        <p>Thoughts, stories, and technical writeups from my journey in cyber security.</p>
+
+      <!-- Social -->
+      <div class="social-icons">
+        <a href="mailto:muhammad@nairpaa.me" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/nairpaa" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/nairpaa" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="https://discord.com/users/709048608770490378" title="Discord" target="_blank" rel="noopener"><i class="fab fa-discord"></i></a>
+        <a href="https://twitter.com/nairpaa" title="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
       </div>
-    </a>
+
+      <!-- Links -->
+      <div class="section-label">~/projects</div>
+
+      <a href="https://rev.nairpaa.me" class="link-card slide-in" target="_blank" rel="noopener">
+        <div class="icon"><i class="fas fa-microchip"></i></div>
+        <div class="info">
+          <h3>ReverseMe</h3>
+          <p>A beginner-friendly guide to reverse engineering.</p>
+        </div>
+        <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+      </a>
+
+      <a href="https://kud.nairpaa.me" class="link-card slide-in" target="_blank" rel="noopener">
+        <div class="icon"><i class="fas fa-bug"></i></div>
+        <div class="info">
+          <h3>KudNote</h3>
+          <p>Notes & techniques from daily pentesting activities.</p>
+        </div>
+        <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+      </a>
+
+      <a href="https://blog.nairpaa.me" class="link-card slide-in" target="_blank" rel="noopener">
+        <div class="icon"><i class="fas fa-terminal"></i></div>
+        <div class="info">
+          <h3>My Blog</h3>
+          <p>Thoughts & technical writeups on cyber security.</p>
+        </div>
+        <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+      </a>
+
+      <!-- More projects (collapsible) -->
+      <div class="more-toggle" onclick="this.classList.toggle('open'); document.getElementById('moreProjects').classList.toggle('show');">
+        <i class="fas fa-chevron-right"></i>
+        <span>more projects</span>
+      </div>
+      <div id="moreProjects" class="more-projects">
+        <a href="https://noxcuse.nairpaa.me" class="link-card" target="_blank" rel="noopener">
+          <div class="icon"><i class="fas fa-hourglass-half"></i></div>
+          <div class="info">
+            <h3>NoXcuse</h3>
+            <p>A simple Pomodoro timer with task management.</p>
+          </div>
+          <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+        <a href="https://github.com/nairpaa/slides" class="link-card" target="_blank" rel="noopener">
+          <div class="icon"><i class="fas fa-chalkboard"></i></div>
+          <div class="info">
+            <h3>Slides</h3>
+            <p>A collection of my presentation slides.</p>
+          </div>
+          <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <div class="terminal-footer">
+        <span class="status-dot"></span>
+        <span>Available for consulting & collaboration</span>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<!-- Spiderweb Animation Script -->
+<!-- Floating hashes script -->
 <script>
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
+  (function() {
+    const container = document.getElementById('floatingHashes');
+    const chars = ['0xDEADBEEF', '0x7FFE4C8', 'jmp 0x41414141', 'mov eax,esp', 'xor edx,edx', 'NOP', '\\x90\\x90\\x90', 'SHELLCODE', '/etc/shadow', 'rm -rf /', 'nc -lvnp 4444', 'chmod 777', 'cat /etc/passwd', 'sudo su', '&&', 'id=0(root)', 'msfconsole', 'meterpreter>', 'C2_BEACON', 'reverse_tcp', 'PAYLOAD_EXEC', 'CVE-2024-0001', 'CRITICAL', 'ACCESS_GRANTED', 'KERNEL_PANIC', 'STACK_OVERFLOW', 'BUFFER_OVERFLOW', 'ROP_CHAIN', 'ret2libc', 'spawn("/bin/sh")', 'SIGKILL'];
+    const count = 25;
 
-  let width = window.innerWidth;
-  let height = window.innerHeight;
-  canvas.width = width;
-  canvas.height = height;
-
-  const particles = [];
-  const numParticles = 100;
-  let mouse = { x: null, y: null };
-
-  for (let i = 0; i < numParticles; i++) {
-    particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: Math.random() * 0.6 - 0.3,
-      vy: Math.random() * 0.6 - 0.3
-    });
-  }
-
-  window.addEventListener("mousemove", function(e) {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  window.addEventListener("resize", function () {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-  });
-
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-
-    for (let i = 0; i < numParticles; i++) {
-      let p = particles[i];
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0 || p.x > width) p.vx *= -1;
-      if (p.y < 0 || p.y > height) p.vy *= -1;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-      ctx.fillStyle = "#00ffff55";
-      ctx.fill();
+    for (let i = 0; i < count; i++) {
+      const span = document.createElement('span');
+      span.classList.add('hash-char');
+      span.textContent = chars[Math.floor(Math.random() * chars.length)];
+      span.style.left = Math.random() * 100 + '%';
+      span.style.top = Math.random() * 100 + '%';
+      span.style.opacity = (0.06 + Math.random() * 0.06).toFixed(2);
+      span.style.fontSize = (10 + Math.random() * 10) + 'px';
+      span.style.animationDuration = (15 + Math.random() * 25) + 's';
+      span.style.animationDelay = -(Math.random() * 20) + 's';
+      container.appendChild(span);
     }
+  })();
+</script>
 
-    for (let i = 0; i < numParticles; i++) {
-      for (let j = i + 1; j < numParticles; j++) {
-        let dx = particles[i].x - particles[j].x;
-        let dy = particles[i].y - particles[j].y;
-        let dist = Math.sqrt(dx * dx + dy * dy);
+<!-- Typing animation script -->
+<script>
+  (function() {
+    const roles = ['Software Engineer', 'Reverse Engineer', 'Red Teamer'];
+    const el = document.getElementById('typingText');
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typeSpeed = 80;
+    const deleteSpeed = 40;
+    const pauseEnd = 2000;
+    const pauseStart = 500;
 
-        if (dist < 120) {
-          let mx = mouse.x;
-          let my = mouse.y;
-          let dmx = (particles[i].x - mx) ** 2 + (particles[i].y - my) ** 2;
-          let dmy = (particles[j].x - mx) ** 2 + (particles[j].y - my) ** 2;
-          let nearMouse = dmx < 10000 || dmy < 10000;
+    function type() {
+      const current = roles[roleIndex];
 
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = nearMouse ? "#00ffffcc" : "#00ffff22";
-          ctx.lineWidth = nearMouse ? 1.2 : 0.4;
-          ctx.stroke();
+      if (!isDeleting) {
+        el.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === current.length) {
+          setTimeout(function() {
+            isDeleting = true;
+            type();
+          }, pauseEnd);
+          return;
         }
+        setTimeout(type, typeSpeed);
+      } else {
+        el.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(type, pauseStart);
+          return;
+        }
+        setTimeout(type, deleteSpeed);
       }
     }
 
-    requestAnimationFrame(draw);
-  }
-
-  draw();
+    type();
+  })();
 </script>
+
 <script defer src="https://cloud.umami.is/script.js" data-website-id="b188e681-dde5-40d7-937f-d027e4e4de33"></script>
 </body>
 </html>
