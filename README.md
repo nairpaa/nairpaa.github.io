@@ -1,5 +1,5 @@
 # nairpaa.me
 
-Personal landing page of Nairpaa — Software Engineer, Reverse Engineer, Red Teamer, and Consultant.
+Personal landing page of Nairpaa — Embedded Security Researcher.
 
 Visit: [nairpaa.me](https://nairpaa.me)
