@@ -404,6 +404,12 @@
 
     .more-count { color: #4f5751; }
 
+    .more-projects {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
     /* Footer */
     .footer {
       position: relative;
@@ -485,7 +491,7 @@
     <section class="projects">
       <div class="projects-head"><span>~/projects</span><span>ls -la</span></div>
 
-      <a href="https://blog.nairpaa.me" class="project" target="_blank" rel="noopener">
+      <a href="https://research.nairpaa.me" class="project" target="_blank" rel="noopener">
         <span class="project-icon"><i class="fa-solid fa-flask"></i></span>
         <span class="project-text">
           <span class="project-title">Exploits &amp; Research</span>
@@ -514,17 +520,28 @@
 
       <!-- More projects (collapsible) -->
       <button class="more-toggle" id="moreToggle" aria-expanded="false" aria-controls="moreProjects">
-        <i class="fa-solid fa-chevron-down"></i>more projects <span class="more-count">(1)</span>
+        <i class="fa-solid fa-chevron-down"></i>more projects <span class="more-count">(2)</span>
       </button>
 
-      <a href="https://hifz.nairpaa.me" class="project extra" id="moreProjects" target="_blank" rel="noopener" hidden>
-        <span class="project-icon"><i class="fa-solid fa-book-quran"></i></span>
-        <span class="project-text">
-          <span class="project-title">JuzDoIt</span>
-          <span class="project-desc">Quran memorization tracker with spaced repetition.</span>
-        </span>
-        <span class="project-arrow">↗</span>
-      </a>
+      <div class="more-projects" id="moreProjects" hidden>
+        <a href="https://blog.nairpaa.me" class="project extra" target="_blank" rel="noopener">
+          <span class="project-icon"><i class="fa-solid fa-mug-hot"></i></span>
+          <span class="project-text">
+            <span class="project-title">Blog</span>
+            <span class="project-desc">A daily blog about random things.</span>
+          </span>
+          <span class="project-arrow">↗</span>
+        </a>
+
+        <a href="https://hifz.nairpaa.me" class="project extra" target="_blank" rel="noopener">
+          <span class="project-icon"><i class="fa-solid fa-book-quran"></i></span>
+          <span class="project-text">
+            <span class="project-title">JuzDoIt</span>
+            <span class="project-desc">Quran memorization tracker with spaced repetition.</span>
+          </span>
+          <span class="project-arrow">↗</span>
+        </a>
+      </div>
     </section>
 
   </main>
